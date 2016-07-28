@@ -29,7 +29,16 @@ GEM
       i18n (~> 0.6)
       multi_json (~> 1.0)
     arel (3.0.3)
+    bootstrap-sass (2.3.2.2)
+      sass (~> 3.2)
     builder (3.0.4)
+    ckeditor (4.2.0)
+      cocaine
+      orm_adapter (~> 0.5.0)
+    climate_control (0.0.3)
+      activesupport (>= 3.0)
+    cocaine (0.5.8)
+      climate_control (>= 0.0.3, < 1.0)
     coffee-rails (3.2.2)
       coffee-script (>= 2.2.0)
       railties (~> 3.2.0)
@@ -39,6 +48,12 @@ GEM
     coffee-script-source (1.10.0)
     erubis (2.7.0)
     execjs (2.7.0)
+    haml (3.1.7)
+    haml-rails (0.3.5)
+      actionpack (>= 3.1, < 4.1)
+      activesupport (>= 3.1, < 4.1)
+      haml (~> 3.1)
+      railties (>= 3.1, < 4.1)
     hike (1.2.3)
     i18n (0.7.0)
     journey (1.0.4)
@@ -51,7 +66,15 @@ GEM
       mime-types (~> 1.16)
       treetop (~> 1.4.8)
     mime-types (1.25.1)
+    mimemagic (0.3.0)
     multi_json (1.12.1)
+    orm_adapter (0.5.0)
+    paperclip (4.3.7)
+      activemodel (>= 3.2.0)
+      activesupport (>= 3.2.0)
+      cocaine (~> 0.5.5)
+      mime-types
+      mimemagic (= 0.3.0)
     polyglot (0.3.5)
     rack (1.4.7)
     rack-cache (1.6.1)
@@ -102,8 +125,13 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  bootstrap-sass
+  ckeditor
   coffee-rails (~> 3.2.1)
+  haml
+  haml-rails
   jquery-rails
+  paperclip
   rails (= 3.2.12)
   sass-rails (~> 3.2.3)
   sqlite3

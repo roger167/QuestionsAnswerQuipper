@@ -1,0 +1,22 @@
+<%= form_for(@questions_and_anwer) do |f| %>
+  <% if @questions_and_anwer.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@questions_and_anwer.errors.count, "error") %> prohibited this questions_and_anwer from being saved:</h2>
+
+      <ul>
+      <% @questions_and_anwer.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="jumbotron">
+    <%= f.label 'Question: '%>
+    <%= f.cktext_area :question, class:'form-control', rows: '4', style:'height: 100%; width: 90%;' %>
+    <br>
+    <%= f.label 'Answer: ' , class:'form-control' %>
+    <%= f.text_field :answer, class:'form-control' %><br><br>
+    <%= f.submit 'Save', class: 'btn btn-primary'  %>
+  </div>
+<% end %>

@@ -1,0 +1,27 @@
+<h1>Listing Questions and Anwers</h1>
+
+<table class="table">
+  <tr>
+    <th>ID</th>
+    <th>Question</th>
+    <th>Answer</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @questions_and_anwers.each do |questions_and_anwer| %>
+  <tr>
+    <td><%= questions_and_anwer.id %></td>
+    <td><%= questions_and_anwer.question %></td>
+    <td><%= questions_and_anwer.answer %></td>
+    <td><%= link_to 'Show', questions_and_anwer, class:'color_blue' %></td>
+    <td><%= link_to 'Edit', edit_questions_and_anwer_path(questions_and_anwer), class:'color_blue' %></td>
+    <td><%= link_to 'Destroy', questions_and_anwer, method: :delete, data: { confirm: 'Are you sure?' },class:'color_red' %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Questions and anwer', new_questions_and_anwer_path, class:'btn btn-primary' %>
