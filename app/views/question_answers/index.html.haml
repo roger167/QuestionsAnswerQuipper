@@ -1,0 +1,25 @@
+%h1 Listing Questions Answers
+
+%table.table.table-bordered
+  %thead
+    %tr
+      %th ID
+      %th Question
+      %th Answer
+      %th
+      %th
+      %th
+
+  %tbody
+    - @question_answers.each do |question_answer|
+      %tr
+        %td= question_answer.id
+        %td= question_answer.question
+        %td= question_answer.answer
+        %td= link_to 'Show', question_answer, class:'color_blue'
+        %td= link_to 'Edit', edit_question_answer_path(question_answer), class:'color_blue'
+        %td= link_to 'Destroy', question_answer, :method => :delete, :data => { :confirm => 'Are you sure?' }, class:'color_red'
+
+%br
+
+= link_to 'New Question', new_question_answer_path, class: 'btn btn-primary'

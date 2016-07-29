@@ -1,0 +1,28 @@
+= form_for @questionnaire do |f|
+  - if @questionnaire.errors.any?
+    #error_explanation
+      %h2= "#{pluralize(@questionnaire.errors.count, "error")} prohibited this questionnaire from being saved:"
+      %ul
+        - @questionnaire.errors.full_messages.each do |msg|
+          %li= msg
+  %table.table
+    %thead
+      %tr
+        %th
+    %tbody
+      - numberQuestion=1
+      - @question_answers.each do |question_answer|
+        %tr
+          %th
+            %label="Question Number "+numberQuestion.to_s
+            = raw question_answer.question
+            .field
+            = f.label 'Answer:','Answer:'
+            /= f.text_field :answerUser
+            %input{:name => "input_#{question_answer.id}", :type => "text"}
+            /%input{:name => "input_#{question_answer.id}", :type => "text"}
+            /= f.hidden_field :idquestion, value:question_answer.id
+            - numberQuestion = numberQuestion+1
+  %br
+  .actions
+    = f.submit 'Save', class:'btn btn-primary'

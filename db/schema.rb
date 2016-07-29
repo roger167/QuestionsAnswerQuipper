@@ -9,15 +9,24 @@
 # from scratch. The latter is a flawed and unsustainable approach (the more migrations
 # you'll amass, the slower it'll run and the greater likelihood for issues).
 #
-# It's strongly recommended to check this file into your version control system.
+# It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20160728023554) do
+ActiveRecord::Schema.define(version: 20160729062853) do
 
-  create_table "questions_and_anwers", :force => true do |t|
+  create_table "question_answers", force: :cascade do |t|
     t.text     "question"
     t.string   "answer"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "questionnaires", force: :cascade do |t|
+    t.string   "answerUser"
+    t.string   "eval"
+    t.integer  "idquestion"
+    t.datetime "created_at",           null: false
+    t.datetime "updated_at",           null: false
+    t.integer  "questionnairesnumber"
   end
 
 end
