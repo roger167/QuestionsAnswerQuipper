@@ -1,0 +1,21 @@
+%table.table
+  %thead
+    %tr
+      %th
+  %tbody
+    - numberQuestion=1
+    - @questionnaire.each do |answer|
+      %tr
+        %th
+          %label="Question Number "+numberQuestion.to_s
+          - @question_answer = QuestionAnswer.where(id:answer.idquestion)
+          = raw @question_answer[0].question
+          .field
+            %label
+              = "Answer by user on Quiz mode: "+answer.answerUser+" "+answer.eval
+          /= f.label 'Answer:','Answer:'
+          /= f.text_field :answerUser
+          /%input{:name => "input_#{question_answer.id}", :type => "text"}
+          /%input{:name => "input_#{question_answer.id}", :type => "text"}
+          /= f.hidden_field :idquestion, value:question_answer.id
+          - numberQuestion = numberQuestion+1

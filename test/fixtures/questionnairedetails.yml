@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  answerUser: MyString
+  eval: MyString
+  idquestion: 1
+  questionnaire_id: 1
+
+two:
+  answerUser: MyString
+  eval: MyString
+  idquestion: 1
+  questionnaire_id: 1

@@ -1,29 +1,19 @@
-%h1 Listing Questionnaires
+%h1.text-center Listing Questionnaires
 
-%table.table
+%table.table.table-bordered
   %thead
     %tr
       %th ID
-      %th Answeruser
-      %th Eval
-      %th Idquestion
-      %th Questionnaires Number
+      %th Title
       %th
-      %th
-      %th
-
   %tbody
     - @questionnaires.each do |questionnaire|
       %tr
         %td= questionnaire.id
-        %td= questionnaire.answerUser
-        %td= questionnaire.eval
-        %td= questionnaire.idquestion
-        %td= questionnaire.questionnairesnumber
-        %td= link_to 'Show', questionnaire
-        %td= link_to 'Edit', edit_questionnaire_path(questionnaire)
-        %td= link_to 'Destroy', questionnaire, :method => :delete, :data => { :confirm => 'Are you sure?' }
+        %td= questionnaire.title
+        %td= link_to 'Show', questionnaire, class:'color_blue'
 
 %br
 
 = link_to 'Resolve New Questionnaire', new_questionnaire_path, class:'btn btn-primary'
+= link_to 'Welcome', '/',class:'btn btn-primary'

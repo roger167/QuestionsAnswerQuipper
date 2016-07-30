@@ -6,7 +6,8 @@
       %th
   %tbody
     - numberQuestion=1
-    - @questionnaire.each do |answer|
+    =@questionnaire.title
+    - @questionnaireDetail.each do |answer|
       %tr
         %th
           %label="Question Number "+numberQuestion.to_s
@@ -14,12 +15,7 @@
           = raw @question_answer[0].question
           .field
             %label
-              = "Answer by user on Quiz mode: "+answer.answerUser+" "+answer.eval
-          /= f.label 'Answer:','Answer:'
-          /= f.text_field :answerUser
-          /%input{:name => "input_#{question_answer.id}", :type => "text"}
-          /%input{:name => "input_#{question_answer.id}", :type => "text"}
-          /= f.hidden_field :idquestion, value:question_answer.id
+              = raw "Answer by user on Quiz mode: "+answer.answerUser+" "+ answer.eval
           - numberQuestion = numberQuestion+1
 
 \|

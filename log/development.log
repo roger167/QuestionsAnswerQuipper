@@ -2617,3 +2617,1728 @@ Processing by QuestionnairesController#show as HTML
   [1m[36mQuestionAnswer Load (0.3ms)[0m  [1mSELECT "question_answers".* FROM "question_answers" WHERE "question_answers"."id" = ?[0m  [["id", 2]]
   Rendered questionnaires/show.html.haml within layouts/application (5.9ms)
 Completed 200 OK in 129ms (Views: 126.7ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/questionnaires/new" for ::1 at 2016-07-29 02:55:50 -0500
+Processing by QuestionnairesController#new as HTML
+  [1m[35mQuestionAnswer Load (0.2ms)[0m  SELECT "question_answers".* FROM "question_answers"
+  Rendered questionnaires/_form.html.haml (15.7ms)
+  Rendered questionnaires/new.html.haml within layouts/application (35.5ms)
+Completed 200 OK in 903ms (Views: 827.5ms | ActiveRecord: 1.9ms)
+
+
+Started POST "/questionnaires" for ::1 at 2016-07-29 02:55:56 -0500
+Processing by QuestionnairesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"TVDG12/wn0VPerNmb7gCmXVjSu1U/HV2EWF3X2Wt1sS1NE9Q+dmpLdH8PRnhg16eJ4AKd0br501kCHlhT4W/0Q==", "input_1"=>"3", "input_2"=>"123", "commit"=>"Save"}
+  [1m[36mQuestionAnswer Load (0.3ms)[0m  [1mSELECT  "question_answers".* FROM "question_answers" WHERE "question_answers"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mQuestionAnswer Load (0.2ms)[0m  SELECT  "question_answers".* FROM "question_answers" WHERE "question_answers"."id" = ? LIMIT 1  [["id", 2]]
+  [1m[36m (0.2ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (15.7ms)[0m  INSERT INTO "questionnaires" ("created_at", "updated_at") VALUES (?, ?)  [["created_at", "2016-07-29 07:55:56.582191"], ["updated_at", "2016-07-29 07:55:56.582191"]]
+  [1m[36m (1.4ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.5ms)[0m  [1mUPDATE "questionnaires" SET "idquestion" = ?, "answerUser" = ?, "eval" = ?, "questionnairesnumber" = ?, "updated_at" = ? WHERE "questionnaires"."id" = ?[0m  [["idquestion", 1], ["answerUser", "3"], ["eval", "CORRECT"], ["questionnairesnumber", 14], ["updated_at", "2016-07-29 07:55:56.604794"], ["id", 14]]
+  [1m[35m (1.3ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.6ms)[0m  INSERT INTO "questionnaires" ("idquestion", "answerUser", "eval", "questionnairesnumber", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)  [["idquestion", 2], ["answerUser", "123"], ["eval", "INCORRECT"], ["questionnairesnumber", 14], ["created_at", "2016-07-29 07:55:56.610433"], ["updated_at", "2016-07-29 07:55:56.610433"]]
+  [1m[36m (30.1ms)[0m  [1mcommit transaction[0m
+Redirected to http://localhost:3000/questionnaires/preview
+Completed 302 Found in 77ms (ActiveRecord: 50.6ms)
+
+
+Started GET "/questionnaires/preview" for ::1 at 2016-07-29 02:55:56 -0500
+Processing by QuestionnairesController#show as HTML
+  Parameters: {"id"=>"preview"}
+  [1m[35mQuestionnaire Load (0.4ms)[0m  SELECT "questionnaires".* FROM "questionnaires" WHERE "questionnaires"."questionnairesnumber" = ?  [["questionnairesnumber", 0]]
+  Rendered questionnaires/show.html.haml within layouts/application (1.7ms)
+Completed 200 OK in 415ms (Views: 412.8ms | ActiveRecord: 0.4ms)
+
+
+Started POST "/questionnaires" for ::1 at 2016-07-29 02:56:40 -0500
+Processing by QuestionnairesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"8GIk3CrFibCvvhdA8HzptzbSLHZNWAonGpmIy0tRDkMIBq1bvOy/2DE4mT9+R7WwZDFs7F9PmBxv8Ib1YXlnVg==", "input_1"=>"3", "input_2"=>"123", "commit"=>"Save"}
+  [1m[36mQuestionAnswer Load (0.2ms)[0m  [1mSELECT  "question_answers".* FROM "question_answers" WHERE "question_answers"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mQuestionAnswer Load (0.1ms)[0m  SELECT  "question_answers".* FROM "question_answers" WHERE "question_answers"."id" = ? LIMIT 1  [["id", 2]]
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "questionnaires" ("created_at", "updated_at") VALUES (?, ?)  [["created_at", "2016-07-29 07:56:40.306213"], ["updated_at", "2016-07-29 07:56:40.306213"]]
+  [1m[36m (1.8ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mUPDATE "questionnaires" SET "idquestion" = ?, "answerUser" = ?, "eval" = ?, "questionnairesnumber" = ?, "updated_at" = ? WHERE "questionnaires"."id" = ?[0m  [["idquestion", 1], ["answerUser", "3"], ["eval", "CORRECT"], ["questionnairesnumber", 16], ["updated_at", "2016-07-29 07:56:40.311143"], ["id", 16]]
+  [1m[35m (0.8ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "questionnaires" ("idquestion", "answerUser", "eval", "questionnairesnumber", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)  [["idquestion", 2], ["answerUser", "123"], ["eval", "INCORRECT"], ["questionnairesnumber", 16], ["created_at", "2016-07-29 07:56:40.314316"], ["updated_at", "2016-07-29 07:56:40.314316"]]
+  [1m[36m (1.1ms)[0m  [1mcommit transaction[0m
+Redirected to http://localhost:3000/questionnaires/preview
+Completed 302 Found in 41ms (ActiveRecord: 6.7ms)
+
+
+Started GET "/questionnaires/preview" for ::1 at 2016-07-29 02:56:40 -0500
+Processing by QuestionnairesController#show as HTML
+  Parameters: {"id"=>"preview"}
+  [1m[35mQuestionnaire Load (0.4ms)[0m  SELECT "questionnaires".* FROM "questionnaires" WHERE "questionnaires"."questionnairesnumber" = ?  [["questionnairesnumber", 0]]
+  Rendered questionnaires/show.html.haml within layouts/application (3.6ms)
+Completed 200 OK in 469ms (Views: 467.4ms | ActiveRecord: 0.4ms)
+  [1m[36mActiveRecord::SchemaMigration Load (11.2ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to DeleteTableQuestionnries (20160730000249)
+  [1m[35m (0.2ms)[0m  begin transaction
+  [1m[36m (205.4ms)[0m  [1mDROP TABLE "questionnaires"[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES (?)  [["version", "20160730000249"]]
+  [1m[36m (5.2ms)[0m  [1mcommit transaction[0m
+Migrating to CreateTableQuestionnries (20160730000359)
+  [1m[35m (0.2ms)[0m  begin transaction
+  [1m[36m (0.9ms)[0m  [1mCREATE TABLE "questionnaires" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "title" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) [0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES (?)  [["version", "20160730000359"]]
+  [1m[36m (34.2ms)[0m  [1mcommit transaction[0m
+Migrating to CreateTableQuestionnriesDetail (20160730000405)
+  [1m[35m (0.2ms)[0m  begin transaction
+  [1m[36m (0.8ms)[0m  [1mCREATE TABLE "table_questionnries_details" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "answerUser" varchar, "eval" varchar, "idquestion" integer, "table_questionnries_details_id" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) [0m
+  [1m[35m (18.1ms)[0m  select sqlite_version(*)
+  [1m[36m (1.0ms)[0m  [1mCREATE  INDEX "index_table_questionnries_details_on_questionnaires_id" ON "table_questionnries_details" ("questionnaires_id")[0m
+  [1m[35m (1.0ms)[0m  rollback transaction
+  [1m[36mActiveRecord::SchemaMigration Load (23.0ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to CreateTableQuestionnriesDetail (20160730000405)
+  [1m[35m (0.2ms)[0m  begin transaction
+  [1m[36m (0.7ms)[0m  [1mCREATE TABLE "table_questionnries_details" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "answerUser" varchar, "eval" varchar, "idquestion" integer, "table_questionnries_details_id" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) [0m
+  [1m[35mSQL (0.5ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES (?)  [["version", "20160730000405"]]
+  [1m[36m (18.9ms)[0m  [1mcommit transaction[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.2ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+
+
+Started POST "/questionnaires" for ::1 at 2016-07-29 19:15:39 -0500
+  [1m[36mActiveRecord::SchemaMigration Load (10.6ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by QuestionnairesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"8GIk3CrFibCvvhdA8HzptzbSLHZNWAonGpmIy0tRDkMIBq1bvOy/2DE4mT9+R7WwZDFs7F9PmBxv8Ib1YXlnVg==", "input_1"=>"3", "input_2"=>"123", "commit"=>"Save"}
+Completed 500 Internal Server Error in 43ms (ActiveRecord: 0.0ms)
+
+NameError (uninitialized constant QuestionnairesController::TableQuestionnriesDetails):
+  app/controllers/questionnaires_controller.rb:39:in `block in create'
+  app/controllers/questionnaires_controller.rb:36:in `create'
+
+
+  Rendered /Users/roger3antonio/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_source.erb (5.8ms)
+  Rendered /Users/roger3antonio/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.5ms)
+  Rendered /Users/roger3antonio/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.1ms)
+  Rendered /Users/roger3antonio/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (126.3ms)
+  Rendered /Users/roger3antonio/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (1.0ms)
+  Rendered /Users/roger3antonio/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/roger3antonio/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/roger3antonio/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/roger3antonio/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (201.9ms)
+  Rendered /Users/roger3antonio/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.4ms)
+  Rendered /Users/roger3antonio/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.5ms)
+  Rendered /Users/roger3antonio/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (317.9ms)
+  [1m[36mActiveRecord::SchemaMigration Load (11.7ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to DropTableQuestionnriesDetail (20160730001743)
+  [1m[35m (0.2ms)[0m  begin transaction
+  [1m[36m (1.4ms)[0m  [1mDROP TABLE "table_questionnries_details"[0m
+  [1m[35mSQL (0.7ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES (?)  [["version", "20160730001743"]]
+  [1m[36m (1.9ms)[0m  [1mcommit transaction[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.1ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+  [1m[36mActiveRecord::SchemaMigration Load (12.7ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to CreateQuestionnairedetails (20160730002020)
+  [1m[35m (0.3ms)[0m  begin transaction
+  [1m[36m (16.1ms)[0m  [1mCREATE TABLE "questionnairedetails" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "answerUser" varchar, "eval" varchar, "idquestion" integer, "questionnaire_id" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) [0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES (?)  [["version", "20160730002020"]]
+  [1m[36m (1.5ms)[0m  [1mcommit transaction[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.2ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+  [1m[36mActiveRecord::SchemaMigration Load (9.8ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to AddIndexQuestionnaireDetail (20160730002110)
+  [1m[35m (0.2ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mselect sqlite_version(*)[0m
+  [1m[35m (17.1ms)[0m  CREATE  INDEX "index_questionnairedetails_on_questionnaire_id" ON "questionnairedetails" ("questionnaire_id")
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20160730002110"]]
+  [1m[35m (1.4ms)[0m  commit transaction
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.2ms)[0m              SELECT sql
+            FROM sqlite_master
+            WHERE name='index_questionnairedetails_on_questionnaire_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_questionnairedetails_on_questionnaire_id' AND type='index'
+
+
+
+Started POST "/questionnaires" for ::1 at 2016-07-29 19:24:37 -0500
+  [1m[36mActiveRecord::SchemaMigration Load (12.0ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by QuestionnairesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"8GIk3CrFibCvvhdA8HzptzbSLHZNWAonGpmIy0tRDkMIBq1bvOy/2DE4mT9+R7WwZDFs7F9PmBxv8Ib1YXlnVg==", "input_1"=>"3", "input_2"=>"123", "commit"=>"Save"}
+  [1m[35mQuestionAnswer Load (19.0ms)[0m  SELECT  "question_answers".* FROM "question_answers" WHERE "question_answers"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mQuestionAnswer Load (0.2ms)[0m  [1mSELECT  "question_answers".* FROM "question_answers" WHERE "question_answers"."id" = ? LIMIT 1[0m  [["id", 2]]
+Completed 500 Internal Server Error in 193ms (ActiveRecord: 20.1ms)
+
+NameError (undefined local variable or method `mmmmm' for #<QuestionnairesController:0x007fb16c483490>):
+  app/controllers/questionnaires_controller.rb:46:in `create'
+
+
+  Rendered /Users/roger3antonio/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_source.erb (10.3ms)
+  Rendered /Users/roger3antonio/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (3.4ms)
+  Rendered /Users/roger3antonio/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.2ms)
+  Rendered /Users/roger3antonio/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (159.6ms)
+  Rendered /Users/roger3antonio/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.4ms)
+  Rendered /Users/roger3antonio/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/roger3antonio/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/roger3antonio/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/roger3antonio/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (691.5ms)
+  Rendered /Users/roger3antonio/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.4ms)
+  Rendered /Users/roger3antonio/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.6ms)
+  Rendered /Users/roger3antonio/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (830.5ms)
+
+
+Started GET "/questionnaires" for ::1 at 2016-07-29 19:39:14 -0500
+Processing by QuestionnairesController#index as HTML
+  [1m[35mQuestionnaire Load (15.9ms)[0m  SELECT "questionnaires".* FROM "questionnaires"
+  Rendered questionnaires/index.html.haml within layouts/application (41.0ms)
+Completed 200 OK in 7885ms (Views: 7863.7ms | ActiveRecord: 16.2ms)
+
+
+Started GET "/assets/questionnairedetails.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-07-29 19:39:23 -0500
+
+
+Started GET "/assets/questionnairedetails.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-07-29 19:39:23 -0500
+
+
+Started GET "/questionnaires/new" for ::1 at 2016-07-29 19:40:31 -0500
+Processing by QuestionnairesController#new as HTML
+  [1m[36mQuestionAnswer Load (21.1ms)[0m  [1mSELECT "question_answers".* FROM "question_answers"[0m
+  Rendered questionnaires/_form.html.haml (387.4ms)
+  Rendered questionnaires/new.html.haml within layouts/application (407.0ms)
+Completed 200 OK in 1121ms (Views: 1009.9ms | ActiveRecord: 41.8ms)
+
+
+Started POST "/questionnaires" for ::1 at 2016-07-29 19:40:40 -0500
+Processing by QuestionnairesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"sF/VyNPaS/0rSKDz9LcajDS09kpsyE76ItcJkefOxilIO1xPRfN9lbXOLox6jEaLZle20H7f3MFXvgevzeavPA==", "input_1"=>"32", "input_2"=>"seven", "commit"=>"Save"}
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (12.0ms)[0m  [1mINSERT INTO "questionnaires" ("created_at", "updated_at") VALUES (?, ?)[0m  [["created_at", "2016-07-30 00:40:40.606840"], ["updated_at", "2016-07-30 00:40:40.606840"]]
+  [1m[35m (14.9ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  UPDATE "questionnaires" SET "title" = ?, "updated_at" = ? WHERE "questionnaires"."id" = ?  [["title", "Test 1"], ["updated_at", "2016-07-30 00:40:40.637035"], ["id", 1]]
+  [1m[36m (1.0ms)[0m  [1mcommit transaction[0m
+  [1m[35mQuestionAnswer Load (0.2ms)[0m  SELECT  "question_answers".* FROM "question_answers" WHERE "question_answers"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (1.1ms)[0m  INSERT INTO "questionnairedetails" ("answerUser", "idquestion", "eval", "questionnaire_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)  [["answerUser", "32"], ["idquestion", 1], ["eval", "CORRECT"], ["questionnaire_id", 1], ["created_at", "2016-07-30 00:40:40.680870"], ["updated_at", "2016-07-30 00:40:40.680870"]]
+  [1m[36m (2.3ms)[0m  [1mcommit transaction[0m
+  [1m[35mQuestionAnswer Load (0.1ms)[0m  SELECT  "question_answers".* FROM "question_answers" WHERE "question_answers"."id" = ? LIMIT 1  [["id", 2]]
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "questionnairedetails" ("answerUser", "idquestion", "eval", "questionnaire_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)  [["answerUser", "seven"], ["idquestion", 2], ["eval", "INCORRECT"], ["questionnaire_id", 1], ["created_at", "2016-07-30 00:40:40.687222"], ["updated_at", "2016-07-30 00:40:40.687222"]]
+  [1m[36m (1.4ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mcommit transaction[0m
+Redirected to http://localhost:3000/questionnaires/1
+Completed 302 Found in 87ms (ActiveRecord: 34.7ms)
+
+
+Started GET "/questionnaires/1" for ::1 at 2016-07-29 19:40:40 -0500
+Processing by QuestionnairesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mQuestionnaire Load (0.2ms)[0m  SELECT  "questionnaires".* FROM "questionnaires" WHERE "questionnaires"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered questionnaires/show.html.haml within layouts/application (11.6ms)
+Completed 500 Internal Server Error in 69ms (ActiveRecord: 0.2ms)
+
+ActionView::Template::Error (undefined method `each' for #<Questionnaire:0x007fb1710fc600>):
+     6:       %th
+     7:   %tbody
+     8:     - numberQuestion=1
+     9:     - @questionnaire.each do |answer|
+    10:       %tr
+    11:         %th
+    12:           %label="Question Number "+numberQuestion.to_s
+  app/views/questionnaires/show.html.haml:9:in `_app_views_questionnaires_show_html_haml__3447833828540304240_70200041534140'
+
+
+  Rendered /Users/roger3antonio/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_source.erb (10.7ms)
+  Rendered /Users/roger3antonio/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (4.3ms)
+  Rendered /Users/roger3antonio/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.2ms)
+  Rendered /Users/roger3antonio/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (108.1ms)
+  Rendered /Users/roger3antonio/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.6ms)
+  Rendered /Users/roger3antonio/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.6ms)
+  Rendered /Users/roger3antonio/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.5ms)
+  Rendered /Users/roger3antonio/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/roger3antonio/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (93.1ms)
+  Rendered /Users/roger3antonio/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.4ms)
+  Rendered /Users/roger3antonio/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.7ms)
+  Rendered /Users/roger3antonio/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (207.7ms)
+
+
+Started GET "/questionnaires" for ::1 at 2016-07-29 19:40:51 -0500
+Processing by QuestionnairesController#index as HTML
+  [1m[36mQuestionnaire Load (0.2ms)[0m  [1mSELECT "questionnaires".* FROM "questionnaires"[0m
+  Rendered questionnaires/index.html.haml within layouts/application (10.8ms)
+Completed 200 OK in 369ms (Views: 367.9ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/questionnaires/1" for ::1 at 2016-07-29 19:41:06 -0500
+Processing by QuestionnairesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mQuestionnaire Load (0.1ms)[0m  SELECT  "questionnaires".* FROM "questionnaires" WHERE "questionnaires"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered questionnaires/show.html.haml within layouts/application (5.5ms)
+Completed 500 Internal Server Error in 60ms (ActiveRecord: 0.1ms)
+
+ActionView::Template::Error (undefined method `each' for #<Questionnaire:0x007fb173103200>):
+     6:       %th
+     7:   %tbody
+     8:     - numberQuestion=1
+     9:     - @questionnaire.each do |answer|
+    10:       %tr
+    11:         %th
+    12:           %label="Question Number "+numberQuestion.to_s
+  app/views/questionnaires/show.html.haml:9:in `_app_views_questionnaires_show_html_haml__3447833828540304240_70200041534140'
+
+
+  Rendered /Users/roger3antonio/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_source.erb (12.7ms)
+  Rendered /Users/roger3antonio/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (4.1ms)
+  Rendered /Users/roger3antonio/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.0ms)
+  Rendered /Users/roger3antonio/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (121.9ms)
+  Rendered /Users/roger3antonio/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.5ms)
+  Rendered /Users/roger3antonio/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/roger3antonio/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/roger3antonio/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/roger3antonio/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (85.6ms)
+  Rendered /Users/roger3antonio/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.3ms)
+  Rendered /Users/roger3antonio/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.5ms)
+  Rendered /Users/roger3antonio/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (199.9ms)
+
+
+Started GET "/questionnaires/1" for ::1 at 2016-07-29 19:42:53 -0500
+Processing by QuestionnairesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mQuestionnaire Load (0.2ms)[0m  [1mSELECT  "questionnaires".* FROM "questionnaires" WHERE "questionnaires"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered questionnaires/show.html.haml within layouts/application (2.0ms)
+Completed 500 Internal Server Error in 41ms (ActiveRecord: 0.2ms)
+
+ActionView::Template::Error (Illegal nesting: nesting within a tag that already has content is illegal.):
+     8:     - numberQuestion=1
+     9:     =@questionnaire.title
+    10:     /- @questionnaire.each do |answer|
+    11:       %tr
+    12:         %th
+    13:           %label="Question Number "+numberQuestion.to_s
+    14:           - @question_answer = QuestionAnswer.where(id:answer.idquestion)
+  app/views/questionnaires/show.html.haml:11
+
+
+  Rendered /Users/roger3antonio/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_source.erb (8.9ms)
+  Rendered /Users/roger3antonio/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (4.8ms)
+  Rendered /Users/roger3antonio/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.1ms)
+  Rendered /Users/roger3antonio/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (142.7ms)
+  Rendered /Users/roger3antonio/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.4ms)
+  Rendered /Users/roger3antonio/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/roger3antonio/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.6ms)
+  Rendered /Users/roger3antonio/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (6.2ms)
+  Rendered /Users/roger3antonio/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (103.1ms)
+  Rendered /Users/roger3antonio/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.3ms)
+  Rendered /Users/roger3antonio/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.5ms)
+  Rendered /Users/roger3antonio/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (223.5ms)
+
+
+Started GET "/questionnaires/1" for ::1 at 2016-07-29 19:43:19 -0500
+Processing by QuestionnairesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mQuestionnaire Load (0.3ms)[0m  SELECT  "questionnaires".* FROM "questionnaires" WHERE "questionnaires"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered questionnaires/show.html.haml within layouts/application (2.2ms)
+Completed 200 OK in 609ms (Views: 607.1ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/questionnaires" for ::1 at 2016-07-29 19:45:33 -0500
+Processing by QuestionnairesController#index as HTML
+  [1m[36mQuestionnaire Load (1.1ms)[0m  [1mSELECT "questionnaires".* FROM "questionnaires"[0m
+  Rendered questionnaires/index.html.haml within layouts/application (14.8ms)
+Completed 200 OK in 741ms (Views: 727.5ms | ActiveRecord: 1.8ms)
+
+
+Started GET "/questionnaires/1" for ::1 at 2016-07-29 19:45:36 -0500
+Processing by QuestionnairesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mQuestionnaire Load (1.2ms)[0m  SELECT  "questionnaires".* FROM "questionnaires" WHERE "questionnaires"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mQuestionnairedetail Load (0.3ms)[0m  [1mSELECT "questionnairedetails".* FROM "questionnairedetails" WHERE "questionnairedetails"."questionnaire_id" = ?[0m  [["questionnaire_id", 1]]
+  [1m[35mQuestionAnswer Load (0.2ms)[0m  SELECT "question_answers".* FROM "question_answers" WHERE "question_answers"."id" = ?  [["id", 1]]
+  [1m[36mQuestionAnswer Load (0.1ms)[0m  [1mSELECT "question_answers".* FROM "question_answers" WHERE "question_answers"."id" = ?[0m  [["id", 2]]
+  Rendered questionnaires/show.html.haml within layouts/application (31.2ms)
+Completed 200 OK in 186ms (Views: 142.9ms | ActiveRecord: 2.6ms)
+
+
+Started GET "/questionnaires" for ::1 at 2016-07-29 19:45:50 -0500
+Processing by QuestionnairesController#index as HTML
+  [1m[35mQuestionnaire Load (0.2ms)[0m  SELECT "questionnaires".* FROM "questionnaires"
+  Rendered questionnaires/index.html.haml within layouts/application (1.4ms)
+Completed 200 OK in 229ms (Views: 223.9ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/questionnaires" for ::1 at 2016-07-29 19:46:14 -0500
+Processing by QuestionnairesController#index as HTML
+  [1m[36mQuestionnaire Load (0.2ms)[0m  [1mSELECT "questionnaires".* FROM "questionnaires"[0m
+  Rendered questionnaires/index.html.haml within layouts/application (5.0ms)
+Completed 200 OK in 283ms (Views: 282.0ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/questionnaires" for ::1 at 2016-07-29 19:46:21 -0500
+Processing by QuestionnairesController#index as HTML
+  [1m[35mQuestionnaire Load (0.2ms)[0m  SELECT "questionnaires".* FROM "questionnaires"
+  Rendered questionnaires/index.html.haml within layouts/application (56.8ms)
+Completed 200 OK in 368ms (Views: 367.2ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/questionnaires" for ::1 at 2016-07-29 19:46:46 -0500
+Processing by QuestionnairesController#index as HTML
+  [1m[36mQuestionnaire Load (0.2ms)[0m  [1mSELECT "questionnaires".* FROM "questionnaires"[0m
+  Rendered questionnaires/index.html.haml within layouts/application (3.6ms)
+Completed 200 OK in 308ms (Views: 306.6ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/questionnaires" for ::1 at 2016-07-29 19:47:02 -0500
+Processing by QuestionnairesController#index as HTML
+  [1m[35mQuestionnaire Load (0.2ms)[0m  SELECT "questionnaires".* FROM "questionnaires"
+  Rendered questionnaires/index.html.haml within layouts/application (4.3ms)
+Completed 200 OK in 305ms (Views: 303.7ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/questionnaires/1" for ::1 at 2016-07-29 19:47:51 -0500
+Processing by QuestionnairesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mQuestionnaire Load (0.3ms)[0m  [1mSELECT  "questionnaires".* FROM "questionnaires" WHERE "questionnaires"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mQuestionnairedetail Load (0.1ms)[0m  SELECT "questionnairedetails".* FROM "questionnairedetails" WHERE "questionnairedetails"."questionnaire_id" = ?  [["questionnaire_id", 1]]
+  [1m[36mQuestionAnswer Load (0.1ms)[0m  [1mSELECT "question_answers".* FROM "question_answers" WHERE "question_answers"."id" = ?[0m  [["id", 1]]
+  [1m[35mQuestionAnswer Load (0.1ms)[0m  SELECT "question_answers".* FROM "question_answers" WHERE "question_answers"."id" = ?  [["id", 2]]
+  Rendered questionnaires/show.html.haml within layouts/application (3.4ms)
+Completed 200 OK in 292ms (Views: 286.7ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/" for ::1 at 2016-07-29 19:47:57 -0500
+Processing by WelcomeController#index as HTML
+  Rendered welcome/index.html.haml within layouts/application (2.1ms)
+Completed 200 OK in 147ms (Views: 146.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/question_answers" for ::1 at 2016-07-29 19:48:01 -0500
+Processing by QuestionAnswersController#index as HTML
+  [1m[36mQuestionAnswer Load (0.4ms)[0m  [1mSELECT "question_answers".* FROM "question_answers"[0m
+  Rendered question_answers/index.html.haml within layouts/application (9.1ms)
+Completed 200 OK in 128ms (Views: 126.5ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/question_answers/new" for ::1 at 2016-07-29 19:48:03 -0500
+Processing by QuestionAnswersController#new as HTML
+  Rendered question_answers/_form.html.haml (98.6ms)
+  Rendered question_answers/new.html.haml within layouts/application (116.8ms)
+Completed 200 OK in 235ms (Views: 233.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/ckeditor/config.js?t=G6DE" for ::1 at 2016-07-29 19:48:04 -0500
+
+
+Started GET "/assets/ckeditor/lang/es.js?t=G6DE" for ::1 at 2016-07-29 19:48:04 -0500
+
+
+Started GET "/assets/ckeditor/skins/moono/editor.css?t=G6DE" for ::1 at 2016-07-29 19:48:04 -0500
+
+
+Started GET "/assets/ckeditor/styles.js?t=G6DE" for ::1 at 2016-07-29 19:48:04 -0500
+
+
+Started GET "/assets/ckeditor/skins/moono/icons.png?t=b47abaf" for ::1 at 2016-07-29 19:48:04 -0500
+
+
+Started GET "/assets/ckeditor/contents.css?t=G6DE" for ::1 at 2016-07-29 19:48:04 -0500
+
+
+Started POST "/question_answers" for ::1 at 2016-07-29 19:48:26 -0500
+Processing by QuestionAnswersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"t6hff/vw+DUZCgz0eVshKH1YWPq6NsT6kAkzMRYQJ2hPzNb4bdnOXYeMgov3YH0vL7sYYKghVsHlYD0PPDhOfQ==", "question_answer"=>{"question"=>"<p>What time is it now?</p>\r\n", "answer"=>"7:00"}, "commit"=>"Save"}
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (17.9ms)[0m  [1mINSERT INTO "question_answers" ("question", "answer", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["question", "<p>What time is it now?</p>\r\n"], ["answer", "7:00"], ["created_at", "2016-07-30 00:48:26.743245"], ["updated_at", "2016-07-30 00:48:26.743245"]]
+  [1m[35m (1.5ms)[0m  commit transaction
+Redirected to http://localhost:3000/question_answers/3
+Completed 302 Found in 27ms (ActiveRecord: 19.5ms)
+
+
+Started GET "/question_answers/3" for ::1 at 2016-07-29 19:48:26 -0500
+Processing by QuestionAnswersController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mQuestionAnswer Load (0.3ms)[0m  [1mSELECT  "question_answers".* FROM "question_answers" WHERE "question_answers"."id" = ? LIMIT 1[0m  [["id", 3]]
+  Rendered question_answers/show.html.haml within layouts/application (3.6ms)
+Completed 200 OK in 222ms (Views: 219.9ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/question_answers" for ::1 at 2016-07-29 19:48:29 -0500
+Processing by QuestionAnswersController#index as HTML
+  [1m[35mQuestionAnswer Load (0.2ms)[0m  SELECT "question_answers".* FROM "question_answers"
+  Rendered question_answers/index.html.haml within layouts/application (2.4ms)
+Completed 200 OK in 124ms (Views: 122.7ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/ckeditor/config.js?t=G6DE" for ::1 at 2016-07-29 19:48:40 -0500
+
+
+Started GET "/assets/ckeditor/skins/moono/editor.css?t=G6DE" for ::1 at 2016-07-29 19:48:40 -0500
+
+
+Started GET "/assets/ckeditor/lang/es.js?t=G6DE" for ::1 at 2016-07-29 19:48:40 -0500
+
+
+Started GET "/question_answers" for ::1 at 2016-07-29 19:48:40 -0500
+Processing by QuestionAnswersController#index as HTML
+  [1m[36mQuestionAnswer Load (0.4ms)[0m  [1mSELECT "question_answers".* FROM "question_answers"[0m
+  Rendered question_answers/index.html.haml within layouts/application (3.7ms)
+Completed 200 OK in 324ms (Views: 322.8ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/assets/ckeditor/styles.js?t=G6DE" for ::1 at 2016-07-29 19:48:41 -0500
+
+
+Started GET "/" for ::1 at 2016-07-29 19:48:41 -0500
+Processing by WelcomeController#index as HTML
+  Rendered welcome/index.html.haml within layouts/application (0.2ms)
+Completed 200 OK in 133ms (Views: 131.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/questionnaires" for ::1 at 2016-07-29 19:48:43 -0500
+Processing by QuestionnairesController#index as HTML
+  [1m[35mQuestionnaire Load (0.2ms)[0m  SELECT "questionnaires".* FROM "questionnaires"
+  Rendered questionnaires/index.html.haml within layouts/application (1.4ms)
+Completed 200 OK in 127ms (Views: 125.4ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/questionnaires/new" for ::1 at 2016-07-29 19:48:55 -0500
+Processing by QuestionnairesController#new as HTML
+  [1m[36mQuestionAnswer Load (0.4ms)[0m  [1mSELECT "question_answers".* FROM "question_answers"[0m
+  Rendered questionnaires/_form.html.haml (4.3ms)
+  Rendered questionnaires/new.html.haml within layouts/application (23.3ms)
+Completed 200 OK in 216ms (Views: 214.3ms | ActiveRecord: 0.4ms)
+
+
+Started POST "/questionnaires" for ::1 at 2016-07-29 19:49:10 -0500
+Processing by QuestionnairesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"+RG38JLCe6i4IyZQc8pTdX91DskRkOkJWPVE072li6UBdT53BOtNwCalqC/98Q9yLZZOUwOHezItnErtl43isA==", "input_1"=>"32", "input_2"=>"5", "input_3"=>"7:00", "commit"=>"Save"}
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.7ms)[0m  [1mINSERT INTO "questionnaires" ("created_at", "updated_at") VALUES (?, ?)[0m  [["created_at", "2016-07-30 00:49:10.414883"], ["updated_at", "2016-07-30 00:49:10.414883"]]
+  [1m[35m (1.6ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  UPDATE "questionnaires" SET "title" = ?, "updated_at" = ? WHERE "questionnaires"."id" = ?  [["title", "Test 2"], ["updated_at", "2016-07-30 00:49:10.419173"], ["id", 2]]
+  [1m[36m (48.3ms)[0m  [1mcommit transaction[0m
+  [1m[35mQuestionAnswer Load (0.3ms)[0m  SELECT  "question_answers".* FROM "question_answers" WHERE "question_answers"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.5ms)[0m  INSERT INTO "questionnairedetails" ("answerUser", "idquestion", "eval", "questionnaire_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)  [["answerUser", "32"], ["idquestion", 1], ["eval", "CORRECT"], ["questionnaire_id", 2], ["created_at", "2016-07-30 00:49:10.471808"], ["updated_at", "2016-07-30 00:49:10.471808"]]
+  [1m[36m (1.9ms)[0m  [1mcommit transaction[0m
+  [1m[35mQuestionAnswer Load (0.2ms)[0m  SELECT  "question_answers".* FROM "question_answers" WHERE "question_answers"."id" = ? LIMIT 1  [["id", 2]]
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "questionnairedetails" ("answerUser", "idquestion", "eval", "questionnaire_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)  [["answerUser", "5"], ["idquestion", 2], ["eval", "CORRECT"], ["questionnaire_id", 2], ["created_at", "2016-07-30 00:49:10.477352"], ["updated_at", "2016-07-30 00:49:10.477352"]]
+  [1m[36m (2.9ms)[0m  [1mcommit transaction[0m
+  [1m[35mQuestionAnswer Load (0.2ms)[0m  SELECT  "question_answers".* FROM "question_answers" WHERE "question_answers"."id" = ? LIMIT 1  [["id", 3]]
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "questionnairedetails" ("answerUser", "idquestion", "eval", "questionnaire_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)  [["answerUser", "7:00"], ["idquestion", 3], ["eval", "CORRECT"], ["questionnaire_id", 2], ["created_at", "2016-07-30 00:49:10.483033"], ["updated_at", "2016-07-30 00:49:10.483033"]]
+  [1m[36m (1.1ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mcommit transaction[0m
+Redirected to http://localhost:3000/questionnaires/2
+Completed 302 Found in 80ms (ActiveRecord: 59.1ms)
+
+
+Started GET "/questionnaires/2" for ::1 at 2016-07-29 19:49:10 -0500
+Processing by QuestionnairesController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[35mQuestionnaire Load (0.1ms)[0m  SELECT  "questionnaires".* FROM "questionnaires" WHERE "questionnaires"."id" = ? LIMIT 1  [["id", 2]]
+  [1m[36mQuestionnairedetail Load (0.2ms)[0m  [1mSELECT "questionnairedetails".* FROM "questionnairedetails" WHERE "questionnairedetails"."questionnaire_id" = ?[0m  [["questionnaire_id", 2]]
+  [1m[35mQuestionAnswer Load (0.1ms)[0m  SELECT "question_answers".* FROM "question_answers" WHERE "question_answers"."id" = ?  [["id", 1]]
+  [1m[36mQuestionAnswer Load (0.1ms)[0m  [1mSELECT "question_answers".* FROM "question_answers" WHERE "question_answers"."id" = ?[0m  [["id", 2]]
+  [1m[35mQuestionAnswer Load (0.1ms)[0m  SELECT "question_answers".* FROM "question_answers" WHERE "question_answers"."id" = ?  [["id", 3]]
+  Rendered questionnaires/show.html.haml within layouts/application (4.8ms)
+Completed 200 OK in 105ms (Views: 103.2ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/questionnaires" for ::1 at 2016-07-29 19:49:17 -0500
+Processing by QuestionnairesController#index as HTML
+  [1m[36mQuestionnaire Load (0.2ms)[0m  [1mSELECT "questionnaires".* FROM "questionnaires"[0m
+  Rendered questionnaires/index.html.haml within layouts/application (1.4ms)
+Completed 200 OK in 87ms (Views: 86.0ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/questionnaires/1" for ::1 at 2016-07-29 19:49:20 -0500
+Processing by QuestionnairesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mQuestionnaire Load (0.2ms)[0m  SELECT  "questionnaires".* FROM "questionnaires" WHERE "questionnaires"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mQuestionnairedetail Load (0.1ms)[0m  [1mSELECT "questionnairedetails".* FROM "questionnairedetails" WHERE "questionnairedetails"."questionnaire_id" = ?[0m  [["questionnaire_id", 1]]
+  [1m[35mQuestionAnswer Load (0.1ms)[0m  SELECT "question_answers".* FROM "question_answers" WHERE "question_answers"."id" = ?  [["id", 1]]
+  [1m[36mQuestionAnswer Load (0.1ms)[0m  [1mSELECT "question_answers".* FROM "question_answers" WHERE "question_answers"."id" = ?[0m  [["id", 2]]
+  Rendered questionnaires/show.html.haml within layouts/application (2.5ms)
+Completed 200 OK in 108ms (Views: 105.5ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/" for ::1 at 2016-07-29 19:49:41 -0500
+Processing by WelcomeController#index as HTML
+  Rendered welcome/index.html.haml within layouts/application (0.6ms)
+Completed 200 OK in 393ms (Views: 392.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2016-07-29 19:50:43 -0500
+Processing by WelcomeController#index as HTML
+  Rendered welcome/index.html.haml within layouts/application (11.6ms)
+Completed 200 OK in 617ms (Views: 615.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2016-07-29 19:52:19 -0500
+Processing by WelcomeController#index as HTML
+  Rendered welcome/index.html.haml within layouts/application (25.7ms)
+Completed 200 OK in 693ms (Views: 688.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2016-07-29 19:53:10 -0500
+Processing by WelcomeController#index as HTML
+  Rendered welcome/index.html.haml within layouts/application (5.7ms)
+Completed 500 Internal Server Error in 33ms (ActiveRecord: 0.0ms)
+
+ActionView::Template::Error (Illegal nesting: nesting within plain text is illegal.):
+    1: .row
+    2:   ,well.login.col-sm-6.col-sm-offset-3.col-md-4.col-md-offset-4
+    3:     %h1 Welcome Quipper Test
+    4:     = link_to 'Questions Admin', "/question_answers"
+    5:     %br
+    6:     = link_to 'Questionnaire', "/questionnaires"
+  app/views/welcome/index.html.haml:3
+
+
+  Rendered /Users/roger3antonio/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_source.erb (9.7ms)
+  Rendered /Users/roger3antonio/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (3.7ms)
+  Rendered /Users/roger3antonio/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.3ms)
+  Rendered /Users/roger3antonio/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (110.9ms)
+  Rendered /Users/roger3antonio/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (1.1ms)
+  Rendered /Users/roger3antonio/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.6ms)
+  Rendered /Users/roger3antonio/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/roger3antonio/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.5ms)
+  Rendered /Users/roger3antonio/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (86.9ms)
+  Rendered /Users/roger3antonio/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.4ms)
+  Rendered /Users/roger3antonio/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.7ms)
+  Rendered /Users/roger3antonio/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (197.1ms)
+
+
+Started GET "/" for ::1 at 2016-07-29 19:53:29 -0500
+Processing by WelcomeController#index as HTML
+  Rendered welcome/index.html.haml within layouts/application (16.2ms)
+Completed 500 Internal Server Error in 60ms (ActiveRecord: 0.0ms)
+
+ActionView::Template::Error (Illegal nesting: nesting within plain text is illegal.):
+    1: .row
+    2:   ,well.login.col-sm-6.col-sm-offset-3.col-md-4.col-md-offset-4
+    3:     %h1= Welcome Quipper Test
+    4:     = link_to 'Questions Admin', "/question_answers"
+    5:     %br
+    6:     = link_to 'Questionnaire', "/questionnaires"
+  app/views/welcome/index.html.haml:3
+
+
+  Rendered /Users/roger3antonio/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_source.erb (13.6ms)
+  Rendered /Users/roger3antonio/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (7.7ms)
+  Rendered /Users/roger3antonio/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.6ms)
+  Rendered /Users/roger3antonio/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (115.4ms)
+  Rendered /Users/roger3antonio/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (1.8ms)
+  Rendered /Users/roger3antonio/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.7ms)
+  Rendered /Users/roger3antonio/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.7ms)
+  Rendered /Users/roger3antonio/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (1.5ms)
+  Rendered /Users/roger3antonio/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (100.9ms)
+  Rendered /Users/roger3antonio/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.4ms)
+  Rendered /Users/roger3antonio/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.9ms)
+  Rendered /Users/roger3antonio/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (245.3ms)
+
+
+Started GET "/" for ::1 at 2016-07-29 19:53:44 -0500
+Processing by WelcomeController#index as HTML
+  Rendered welcome/index.html.haml within layouts/application (9.2ms)
+Completed 200 OK in 653ms (Views: 652.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2016-07-29 19:55:13 -0500
+Processing by WelcomeController#index as HTML
+  Rendered welcome/index.html.haml within layouts/application (5.0ms)
+Completed 200 OK in 635ms (Views: 633.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2016-07-29 19:58:56 -0500
+Processing by WelcomeController#index as HTML
+  Rendered welcome/index.html.haml within layouts/application (41.2ms)
+Completed 200 OK in 826ms (Views: 821.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2016-07-29 19:59:08 -0500
+Processing by WelcomeController#index as HTML
+  Rendered welcome/index.html.haml within layouts/application (4.8ms)
+Completed 200 OK in 296ms (Views: 295.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2016-07-29 19:59:18 -0500
+Processing by WelcomeController#index as HTML
+  Rendered welcome/index.html.haml within layouts/application (3.1ms)
+Completed 200 OK in 327ms (Views: 326.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2016-07-29 19:59:30 -0500
+Processing by WelcomeController#index as HTML
+  Rendered welcome/index.html.haml within layouts/application (4.2ms)
+Completed 200 OK in 297ms (Views: 296.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2016-07-29 19:59:41 -0500
+Processing by WelcomeController#index as HTML
+  Rendered welcome/index.html.haml within layouts/application (5.4ms)
+Completed 200 OK in 308ms (Views: 307.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2016-07-29 19:59:56 -0500
+Processing by WelcomeController#index as HTML
+  Rendered welcome/index.html.haml within layouts/application (2.5ms)
+Completed 200 OK in 305ms (Views: 304.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2016-07-29 20:00:33 -0500
+Processing by WelcomeController#index as HTML
+  Rendered welcome/index.html.haml within layouts/application (2.6ms)
+Completed 200 OK in 273ms (Views: 272.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/question_answers" for ::1 at 2016-07-29 20:01:08 -0500
+Processing by QuestionAnswersController#index as HTML
+  [1m[35mQuestionAnswer Load (0.4ms)[0m  SELECT "question_answers".* FROM "question_answers"
+  Rendered question_answers/index.html.haml within layouts/application (5.4ms)
+Completed 200 OK in 388ms (Views: 386.4ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/question_answers" for ::1 at 2016-07-29 20:02:14 -0500
+Processing by QuestionAnswersController#index as HTML
+  [1m[36mQuestionAnswer Load (0.3ms)[0m  [1mSELECT "question_answers".* FROM "question_answers"[0m
+  Rendered question_answers/index.html.haml within layouts/application (4.3ms)
+Completed 200 OK in 719ms (Views: 717.7ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/questionnaires" for ::1 at 2016-07-29 20:02:17 -0500
+Processing by QuestionnairesController#index as HTML
+  [1m[35mQuestionnaire Load (0.2ms)[0m  SELECT "questionnaires".* FROM "questionnaires"
+  Rendered questionnaires/index.html.haml within layouts/application (33.5ms)
+Completed 500 Internal Server Error in 44ms (ActiveRecord: 0.2ms)
+
+ActionView::Template::Error (undefined local variable or method `welcome_path' for #<#<Class:0x007fb174b80f88>:0x007fb1753613b0>):
+    16: %br
+    17: 
+    18: = link_to 'Resolve New Questionnaire', new_questionnaire_path, class:'btn btn-primary'
+    19: = link_to 'Welcome', welcome_path,class:'btn btn-primary'
+  app/views/questionnaires/index.html.haml:19:in `_app_views_questionnaires_index_html_haml__1047718657662926713_70200076132100'
+
+
+  Rendered /Users/roger3antonio/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_source.erb (10.1ms)
+  Rendered /Users/roger3antonio/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (3.9ms)
+  Rendered /Users/roger3antonio/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.2ms)
+  Rendered /Users/roger3antonio/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (115.3ms)
+  Rendered /Users/roger3antonio/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.6ms)
+  Rendered /Users/roger3antonio/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.5ms)
+  Rendered /Users/roger3antonio/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.5ms)
+  Rendered /Users/roger3antonio/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.5ms)
+  Rendered /Users/roger3antonio/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (84.8ms)
+  Rendered /Users/roger3antonio/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.4ms)
+  Rendered /Users/roger3antonio/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.6ms)
+  Rendered /Users/roger3antonio/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (194.1ms)
+
+
+Started GET "/questionnaires" for ::1 at 2016-07-29 20:03:43 -0500
+  [1m[36mActiveRecord::SchemaMigration Load (11.0ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by QuestionnairesController#index as HTML
+  Rendered questionnaires/index.html.haml within layouts/application (25.3ms)
+Completed 500 Internal Server Error in 159ms (ActiveRecord: 0.0ms)
+
+SyntaxError (/Users/roger3antonio/Desktop/proyect/question/app/views/questionnaires/index.html.haml:19: unterminated regexp meets end of file
+/Users/roger3antonio/Desktop/proyect/question/app/views/questionnaires/index.html.haml:19: syntax error, unexpected end-of-input, expecting ')'):
+  app/views/questionnaires/index.html.haml:19: unterminated regexp meets end of file
+  app/views/questionnaires/index.html.haml:19: syntax error, unexpected end-of-input, expecting ')'
+
+
+  Rendered /Users/roger3antonio/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_source.erb (12.4ms)
+  Rendered /Users/roger3antonio/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (3.4ms)
+  Rendered /Users/roger3antonio/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.1ms)
+  Rendered /Users/roger3antonio/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (120.8ms)
+  Rendered /Users/roger3antonio/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.5ms)
+  Rendered /Users/roger3antonio/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.6ms)
+  Rendered /Users/roger3antonio/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/roger3antonio/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/roger3antonio/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (238.6ms)
+  Rendered /Users/roger3antonio/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.4ms)
+  Rendered /Users/roger3antonio/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.4ms)
+  Rendered /Users/roger3antonio/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (375.4ms)
+
+
+Started GET "/questionnaires" for ::1 at 2016-07-29 20:03:56 -0500
+Processing by QuestionnairesController#index as HTML
+  [1m[35mQuestionnaire Load (10.7ms)[0m  SELECT "questionnaires".* FROM "questionnaires"
+  Rendered questionnaires/index.html.haml within layouts/application (23.0ms)
+Completed 200 OK in 3229ms (Views: 3217.1ms | ActiveRecord: 11.6ms)
+
+
+Started GET "/" for ::1 at 2016-07-29 20:04:03 -0500
+Processing by WelcomeController#index as HTML
+  Rendered welcome/index.html.haml within layouts/application (4.0ms)
+Completed 200 OK in 126ms (Views: 125.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/questionnaires" for ::1 at 2016-07-29 20:04:05 -0500
+Processing by QuestionnairesController#index as HTML
+  [1m[36mQuestionnaire Load (0.4ms)[0m  [1mSELECT "questionnaires".* FROM "questionnaires"[0m
+  Rendered questionnaires/index.html.haml within layouts/application (2.4ms)
+Completed 200 OK in 101ms (Views: 99.5ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/" for ::1 at 2016-07-29 20:04:37 -0500
+Processing by WelcomeController#index as HTML
+  Rendered welcome/index.html.haml within layouts/application (0.3ms)
+Completed 200 OK in 172ms (Views: 171.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/question_answers" for ::1 at 2016-07-29 20:04:38 -0500
+Processing by QuestionAnswersController#index as HTML
+  [1m[35mQuestionAnswer Load (14.3ms)[0m  SELECT "question_answers".* FROM "question_answers"
+  Rendered question_answers/index.html.haml within layouts/application (28.0ms)
+Completed 200 OK in 129ms (Views: 111.3ms | ActiveRecord: 14.8ms)
+
+
+Started GET "/" for ::1 at 2016-07-29 20:04:57 -0500
+Processing by WelcomeController#index as HTML
+  Rendered welcome/index.html.haml within layouts/application (0.5ms)
+Completed 200 OK in 102ms (Views: 100.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/questionnaires" for ::1 at 2016-07-29 20:04:58 -0500
+Processing by QuestionnairesController#index as HTML
+  [1m[36mQuestionnaire Load (0.3ms)[0m  [1mSELECT "questionnaires".* FROM "questionnaires"[0m
+  Rendered questionnaires/index.html.haml within layouts/application (2.2ms)
+Completed 200 OK in 100ms (Views: 99.1ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/questionnaires/2" for ::1 at 2016-07-29 20:05:00 -0500
+Processing by QuestionnairesController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[35mQuestionnaire Load (0.3ms)[0m  SELECT  "questionnaires".* FROM "questionnaires" WHERE "questionnaires"."id" = ? LIMIT 1  [["id", 2]]
+  [1m[36mQuestionnairedetail Load (7.7ms)[0m  [1mSELECT "questionnairedetails".* FROM "questionnairedetails" WHERE "questionnairedetails"."questionnaire_id" = ?[0m  [["questionnaire_id", 2]]
+  [1m[35mQuestionAnswer Load (0.2ms)[0m  SELECT "question_answers".* FROM "question_answers" WHERE "question_answers"."id" = ?  [["id", 1]]
+  [1m[36mQuestionAnswer Load (0.1ms)[0m  [1mSELECT "question_answers".* FROM "question_answers" WHERE "question_answers"."id" = ?[0m  [["id", 2]]
+  [1m[35mQuestionAnswer Load (0.1ms)[0m  SELECT "question_answers".* FROM "question_answers" WHERE "question_answers"."id" = ?  [["id", 3]]
+  Rendered questionnaires/show.html.haml within layouts/application (19.8ms)
+Completed 200 OK in 547ms (Views: 131.3ms | ActiveRecord: 8.9ms)
+
+
+Started GET "/" for ::1 at 2016-07-29 20:05:08 -0500
+Processing by WelcomeController#index as HTML
+  Rendered welcome/index.html.haml within layouts/application (0.4ms)
+Completed 200 OK in 109ms (Views: 107.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/question_answers" for ::1 at 2016-07-29 20:05:22 -0500
+Processing by QuestionAnswersController#index as HTML
+  [1m[36mQuestionAnswer Load (0.4ms)[0m  [1mSELECT "question_answers".* FROM "question_answers"[0m
+  Rendered question_answers/index.html.haml within layouts/application (3.8ms)
+Completed 200 OK in 347ms (Views: 345.8ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/" for ::1 at 2016-07-29 20:05:37 -0500
+Processing by WelcomeController#index as HTML
+  Rendered welcome/index.html.haml within layouts/application (0.5ms)
+Completed 200 OK in 518ms (Views: 517.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/questionnairedetails.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-07-29 20:05:39 -0500
+
+
+Started GET "/assets/questionnairedetails.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-07-29 20:05:39 -0500
+
+
+Started GET "/question_answers" for ::1 at 2016-07-29 20:05:47 -0500
+Processing by QuestionAnswersController#index as HTML
+  [1m[35mQuestionAnswer Load (0.3ms)[0m  SELECT "question_answers".* FROM "question_answers"
+  Rendered question_answers/index.html.haml within layouts/application (4.4ms)
+Completed 200 OK in 305ms (Views: 303.8ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/questionnaires" for ::1 at 2016-07-29 20:05:55 -0500
+Processing by QuestionnairesController#index as HTML
+  [1m[36mQuestionnaire Load (0.4ms)[0m  [1mSELECT "questionnaires".* FROM "questionnaires"[0m
+  Rendered questionnaires/index.html.haml within layouts/application (2.7ms)
+Completed 200 OK in 318ms (Views: 316.6ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/questionnaires" for ::1 at 2016-07-29 20:06:35 -0500
+Processing by QuestionnairesController#index as HTML
+  [1m[35mQuestionnaire Load (0.3ms)[0m  SELECT "questionnaires".* FROM "questionnaires"
+  Rendered questionnaires/index.html.haml within layouts/application (6.4ms)
+Completed 200 OK in 485ms (Views: 483.1ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/" for ::1 at 2016-07-29 20:06:40 -0500
+Processing by WelcomeController#index as HTML
+  Rendered welcome/index.html.haml within layouts/application (0.3ms)
+Completed 200 OK in 95ms (Views: 93.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/questionnaires" for ::1 at 2016-07-29 20:06:41 -0500
+Processing by QuestionnairesController#index as HTML
+  [1m[36mQuestionnaire Load (0.2ms)[0m  [1mSELECT "questionnaires".* FROM "questionnaires"[0m
+  Rendered questionnaires/index.html.haml within layouts/application (1.7ms)
+Completed 200 OK in 105ms (Views: 104.1ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/" for ::1 at 2016-07-29 20:06:43 -0500
+Processing by WelcomeController#index as HTML
+  Rendered welcome/index.html.haml within layouts/application (0.3ms)
+Completed 200 OK in 81ms (Views: 80.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/question_answers" for ::1 at 2016-07-29 20:06:44 -0500
+Processing by QuestionAnswersController#index as HTML
+  [1m[35mQuestionAnswer Load (0.2ms)[0m  SELECT "question_answers".* FROM "question_answers"
+  Rendered question_answers/index.html.haml within layouts/application (2.9ms)
+Completed 200 OK in 126ms (Views: 125.2ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/" for ::1 at 2016-07-29 20:06:46 -0500
+Processing by WelcomeController#index as HTML
+  Rendered welcome/index.html.haml within layouts/application (0.3ms)
+Completed 200 OK in 92ms (Views: 91.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/questionnaires" for ::1 at 2016-07-29 20:06:48 -0500
+Processing by QuestionnairesController#index as HTML
+  [1m[36mQuestionnaire Load (0.2ms)[0m  [1mSELECT "questionnaires".* FROM "questionnaires"[0m
+  Rendered questionnaires/index.html.haml within layouts/application (1.4ms)
+Completed 200 OK in 82ms (Views: 81.2ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/" for ::1 at 2016-07-29 20:08:58 -0500
+Processing by WelcomeController#index as HTML
+  Rendered welcome/index.html.haml within layouts/application (0.3ms)
+Completed 200 OK in 4970ms (Views: 4969.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/question_answers" for ::1 at 2016-07-29 20:09:03 -0500
+Processing by QuestionAnswersController#index as HTML
+  [1m[35mQuestionAnswer Load (13.9ms)[0m  SELECT "question_answers".* FROM "question_answers"
+  Rendered question_answers/index.html.haml within layouts/application (32.7ms)
+Completed 200 OK in 161ms (Views: 143.4ms | ActiveRecord: 14.5ms)
+
+
+Started GET "/" for ::1 at 2016-07-29 20:09:06 -0500
+Processing by WelcomeController#index as HTML
+  Rendered welcome/index.html.haml within layouts/application (0.4ms)
+Completed 200 OK in 120ms (Views: 118.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/questionnaires" for ::1 at 2016-07-29 20:09:07 -0500
+Processing by QuestionnairesController#index as HTML
+  [1m[36mQuestionnaire Load (19.3ms)[0m  [1mSELECT "questionnaires".* FROM "questionnaires"[0m
+  Rendered questionnaires/index.html.haml within layouts/application (32.2ms)
+Completed 200 OK in 173ms (Views: 134.9ms | ActiveRecord: 20.1ms)
+
+
+Started GET "/" for ::1 at 2016-07-29 20:09:20 -0500
+Processing by WelcomeController#index as HTML
+  Rendered welcome/index.html.haml within layouts/application (0.2ms)
+Completed 200 OK in 104ms (Views: 103.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/questionnaires" for ::1 at 2016-07-29 20:09:21 -0500
+Processing by QuestionnairesController#index as HTML
+  [1m[35mQuestionnaire Load (0.2ms)[0m  SELECT "questionnaires".* FROM "questionnaires"
+  Rendered questionnaires/index.html.haml within layouts/application (2.5ms)
+Completed 200 OK in 142ms (Views: 141.1ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/" for ::1 at 2016-07-29 20:09:22 -0500
+Processing by WelcomeController#index as HTML
+  Rendered welcome/index.html.haml within layouts/application (0.4ms)
+Completed 200 OK in 141ms (Views: 140.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/question_answers" for ::1 at 2016-07-29 20:09:24 -0500
+Processing by QuestionAnswersController#index as HTML
+  [1m[36mQuestionAnswer Load (0.4ms)[0m  [1mSELECT "question_answers".* FROM "question_answers"[0m
+  Rendered question_answers/index.html.haml within layouts/application (5.1ms)
+Completed 200 OK in 127ms (Views: 125.9ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/" for ::1 at 2016-07-29 20:09:31 -0500
+Processing by WelcomeController#index as HTML
+  Rendered welcome/index.html.haml within layouts/application (0.4ms)
+Completed 200 OK in 116ms (Views: 114.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2016-07-29 20:09:34 -0500
+Processing by WelcomeController#index as HTML
+  Rendered welcome/index.html.haml within layouts/application (0.2ms)
+Completed 200 OK in 99ms (Views: 98.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2016-07-29 20:10:09 -0500
+Processing by WelcomeController#index as HTML
+  Rendered welcome/index.html.haml within layouts/application (3.4ms)
+Completed 200 OK in 883ms (Views: 882.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2016-07-29 20:17:52 -0500
+Processing by WelcomeController#index as HTML
+  Rendered welcome/index.html.haml within layouts/application (97.8ms)
+Completed 200 OK in 1196ms (Views: 1184.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/images/images/quipper.jpg" for ::1 at 2016-07-29 20:17:54 -0500
+
+ActionController::RoutingError (No route matches [GET] "/images/images/quipper.jpg"):
+  actionpack (4.2.6) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  web-console (2.3.0) lib/web_console/middleware.rb:28:in `block in call'
+  web-console (2.3.0) lib/web_console/middleware.rb:18:in `catch'
+  web-console (2.3.0) lib/web_console/middleware.rb:18:in `call'
+  actionpack (4.2.6) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.6) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.6) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.6) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.6) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.6) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.6) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.2.6) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.4) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.4) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.6) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.6) lib/action_dispatch/middleware/static.rb:120:in `call'
+  rack (1.6.4) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.6) lib/rails/engine.rb:518:in `call'
+  railties (4.2.6) lib/rails/application.rb:165:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  rack (1.6.4) lib/rack/content_length.rb:15:in `call'
+  rack (1.6.4) lib/rack/handler/webrick.rb:88:in `service'
+  /Users/roger3antonio/.rbenv/versions/2.2.2/lib/ruby/2.2.0/webrick/httpserver.rb:138:in `service'
+  /Users/roger3antonio/.rbenv/versions/2.2.2/lib/ruby/2.2.0/webrick/httpserver.rb:94:in `run'
+  /Users/roger3antonio/.rbenv/versions/2.2.2/lib/ruby/2.2.0/webrick/server.rb:294:in `block in start_thread'
+
+
+  Rendered /Users/roger3antonio/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (12.5ms)
+  Rendered /Users/roger3antonio/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/routes/_route.html.erb (2.8ms)
+  Rendered /Users/roger3antonio/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/routes/_table.html.erb (319.6ms)
+  Rendered /Users/roger3antonio/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (3.0ms)
+  Rendered /Users/roger3antonio/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (582.6ms)
+  Rendered /Users/roger3antonio/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.6ms)
+  Rendered /Users/roger3antonio/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.6ms)
+  Rendered /Users/roger3antonio/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.5ms)
+  Rendered /Users/roger3antonio/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.5ms)
+  Rendered /Users/roger3antonio/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (104.6ms)
+  Rendered /Users/roger3antonio/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.4ms)
+  Rendered /Users/roger3antonio/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.9ms)
+  Rendered /Users/roger3antonio/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (221.1ms)
+
+
+Started GET "/assets/images/images/quipper.jpg" for ::1 at 2016-07-29 20:18:14 -0500
+
+ActionController::RoutingError (No route matches [GET] "/assets/images/images/quipper.jpg"):
+  actionpack (4.2.6) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  web-console (2.3.0) lib/web_console/middleware.rb:28:in `block in call'
+  web-console (2.3.0) lib/web_console/middleware.rb:18:in `catch'
+  web-console (2.3.0) lib/web_console/middleware.rb:18:in `call'
+  actionpack (4.2.6) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.6) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.6) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.6) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.6) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.6) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.6) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.2.6) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.4) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.4) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.6) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.6) lib/action_dispatch/middleware/static.rb:120:in `call'
+  rack (1.6.4) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.6) lib/rails/engine.rb:518:in `call'
+  railties (4.2.6) lib/rails/application.rb:165:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  rack (1.6.4) lib/rack/content_length.rb:15:in `call'
+  rack (1.6.4) lib/rack/handler/webrick.rb:88:in `service'
+  /Users/roger3antonio/.rbenv/versions/2.2.2/lib/ruby/2.2.0/webrick/httpserver.rb:138:in `service'
+  /Users/roger3antonio/.rbenv/versions/2.2.2/lib/ruby/2.2.0/webrick/httpserver.rb:94:in `run'
+  /Users/roger3antonio/.rbenv/versions/2.2.2/lib/ruby/2.2.0/webrick/server.rb:294:in `block in start_thread'
+
+
+  Rendered /Users/roger3antonio/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.7ms)
+  Rendered /Users/roger3antonio/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/routes/_route.html.erb (2.3ms)
+  Rendered /Users/roger3antonio/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/routes/_table.html.erb (1.6ms)
+  Rendered /Users/roger3antonio/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.4ms)
+  Rendered /Users/roger3antonio/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (151.4ms)
+  Rendered /Users/roger3antonio/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.6ms)
+  Rendered /Users/roger3antonio/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/roger3antonio/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/roger3antonio/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/roger3antonio/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (96.8ms)
+  Rendered /Users/roger3antonio/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.7ms)
+  Rendered /Users/roger3antonio/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.8ms)
+  Rendered /Users/roger3antonio/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (210.5ms)
+
+
+Started GET "/" for ::1 at 2016-07-29 20:18:31 -0500
+Processing by WelcomeController#index as HTML
+  Rendered welcome/index.html.haml within layouts/application (6.6ms)
+Completed 200 OK in 350ms (Views: 349.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/images/assets/images/quipper.jpg" for ::1 at 2016-07-29 20:18:31 -0500
+
+ActionController::RoutingError (No route matches [GET] "/images/assets/images/quipper.jpg"):
+  actionpack (4.2.6) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  web-console (2.3.0) lib/web_console/middleware.rb:28:in `block in call'
+  web-console (2.3.0) lib/web_console/middleware.rb:18:in `catch'
+  web-console (2.3.0) lib/web_console/middleware.rb:18:in `call'
+  actionpack (4.2.6) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.6) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.6) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.6) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.6) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.6) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.6) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.2.6) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.4) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.4) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.6) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.6) lib/action_dispatch/middleware/static.rb:120:in `call'
+  rack (1.6.4) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.6) lib/rails/engine.rb:518:in `call'
+  railties (4.2.6) lib/rails/application.rb:165:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  rack (1.6.4) lib/rack/content_length.rb:15:in `call'
+  rack (1.6.4) lib/rack/handler/webrick.rb:88:in `service'
+  /Users/roger3antonio/.rbenv/versions/2.2.2/lib/ruby/2.2.0/webrick/httpserver.rb:138:in `service'
+  /Users/roger3antonio/.rbenv/versions/2.2.2/lib/ruby/2.2.0/webrick/httpserver.rb:94:in `run'
+  /Users/roger3antonio/.rbenv/versions/2.2.2/lib/ruby/2.2.0/webrick/server.rb:294:in `block in start_thread'
+
+
+  Rendered /Users/roger3antonio/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.4ms)
+  Rendered /Users/roger3antonio/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/routes/_route.html.erb (3.8ms)
+  Rendered /Users/roger3antonio/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/routes/_table.html.erb (4.2ms)
+  Rendered /Users/roger3antonio/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (3.3ms)
+  Rendered /Users/roger3antonio/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (190.4ms)
+  Rendered /Users/roger3antonio/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (1.1ms)
+  Rendered /Users/roger3antonio/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.5ms)
+  Rendered /Users/roger3antonio/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.5ms)
+  Rendered /Users/roger3antonio/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.6ms)
+  Rendered /Users/roger3antonio/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (151.2ms)
+  Rendered /Users/roger3antonio/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.4ms)
+  Rendered /Users/roger3antonio/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (2.0ms)
+  Rendered /Users/roger3antonio/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (377.6ms)
+
+
+Started GET "/" for ::1 at 2016-07-29 20:18:53 -0500
+Processing by WelcomeController#index as HTML
+  Rendered welcome/index.html.haml within layouts/application (5.5ms)
+Completed 200 OK in 233ms (Views: 232.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/quipper.jpg" for ::1 at 2016-07-29 20:18:53 -0500
+
+ActionController::RoutingError (No route matches [GET] "/quipper.jpg"):
+  actionpack (4.2.6) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  web-console (2.3.0) lib/web_console/middleware.rb:28:in `block in call'
+  web-console (2.3.0) lib/web_console/middleware.rb:18:in `catch'
+  web-console (2.3.0) lib/web_console/middleware.rb:18:in `call'
+  actionpack (4.2.6) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.6) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.6) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.6) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.6) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.6) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.6) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.2.6) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.4) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.4) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.6) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.6) lib/action_dispatch/middleware/static.rb:120:in `call'
+  rack (1.6.4) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.6) lib/rails/engine.rb:518:in `call'
+  railties (4.2.6) lib/rails/application.rb:165:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  rack (1.6.4) lib/rack/content_length.rb:15:in `call'
+  rack (1.6.4) lib/rack/handler/webrick.rb:88:in `service'
+  /Users/roger3antonio/.rbenv/versions/2.2.2/lib/ruby/2.2.0/webrick/httpserver.rb:138:in `service'
+  /Users/roger3antonio/.rbenv/versions/2.2.2/lib/ruby/2.2.0/webrick/httpserver.rb:94:in `run'
+  /Users/roger3antonio/.rbenv/versions/2.2.2/lib/ruby/2.2.0/webrick/server.rb:294:in `block in start_thread'
+
+
+  Rendered /Users/roger3antonio/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (8.7ms)
+  Rendered /Users/roger3antonio/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/routes/_route.html.erb (3.5ms)
+  Rendered /Users/roger3antonio/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/routes/_table.html.erb (1.5ms)
+  Rendered /Users/roger3antonio/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (2.4ms)
+  Rendered /Users/roger3antonio/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (204.7ms)
+  Rendered /Users/roger3antonio/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.6ms)
+  Rendered /Users/roger3antonio/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.5ms)
+  Rendered /Users/roger3antonio/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.8ms)
+  Rendered /Users/roger3antonio/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.6ms)
+  Rendered /Users/roger3antonio/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (111.7ms)
+  Rendered /Users/roger3antonio/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.4ms)
+  Rendered /Users/roger3antonio/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (1.0ms)
+  Rendered /Users/roger3antonio/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (329.6ms)
+
+
+Started GET "/images/quipper.jpg" for ::1 at 2016-07-29 20:19:25 -0500
+
+ActionController::RoutingError (No route matches [GET] "/images/quipper.jpg"):
+  actionpack (4.2.6) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  web-console (2.3.0) lib/web_console/middleware.rb:28:in `block in call'
+  web-console (2.3.0) lib/web_console/middleware.rb:18:in `catch'
+  web-console (2.3.0) lib/web_console/middleware.rb:18:in `call'
+  actionpack (4.2.6) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.6) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.6) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.6) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.6) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.6) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.6) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.2.6) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.4) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.4) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.6) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.6) lib/action_dispatch/middleware/static.rb:120:in `call'
+  rack (1.6.4) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.6) lib/rails/engine.rb:518:in `call'
+  railties (4.2.6) lib/rails/application.rb:165:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  rack (1.6.4) lib/rack/content_length.rb:15:in `call'
+  rack (1.6.4) lib/rack/handler/webrick.rb:88:in `service'
+  /Users/roger3antonio/.rbenv/versions/2.2.2/lib/ruby/2.2.0/webrick/httpserver.rb:138:in `service'
+  /Users/roger3antonio/.rbenv/versions/2.2.2/lib/ruby/2.2.0/webrick/httpserver.rb:94:in `run'
+  /Users/roger3antonio/.rbenv/versions/2.2.2/lib/ruby/2.2.0/webrick/server.rb:294:in `block in start_thread'
+
+
+  Rendered /Users/roger3antonio/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.7ms)
+  Rendered /Users/roger3antonio/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/routes/_route.html.erb (4.2ms)
+  Rendered /Users/roger3antonio/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/routes/_table.html.erb (3.5ms)
+  Rendered /Users/roger3antonio/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (2.4ms)
+  Rendered /Users/roger3antonio/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (150.1ms)
+  Rendered /Users/roger3antonio/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.9ms)
+  Rendered /Users/roger3antonio/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/roger3antonio/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/roger3antonio/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (1.2ms)
+  Rendered /Users/roger3antonio/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (108.6ms)
+  Rendered /Users/roger3antonio/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.7ms)
+  Rendered /Users/roger3antonio/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.9ms)
+  Rendered /Users/roger3antonio/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (258.1ms)
+
+
+Started GET "/assets/images/quipper.jpg" for ::1 at 2016-07-29 20:19:40 -0500
+
+ActionController::RoutingError (No route matches [GET] "/assets/images/quipper.jpg"):
+  actionpack (4.2.6) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  web-console (2.3.0) lib/web_console/middleware.rb:28:in `block in call'
+  web-console (2.3.0) lib/web_console/middleware.rb:18:in `catch'
+  web-console (2.3.0) lib/web_console/middleware.rb:18:in `call'
+  actionpack (4.2.6) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.6) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.6) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.6) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.6) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.6) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.6) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.2.6) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.4) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.4) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.6) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.6) lib/action_dispatch/middleware/static.rb:120:in `call'
+  rack (1.6.4) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.6) lib/rails/engine.rb:518:in `call'
+  railties (4.2.6) lib/rails/application.rb:165:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  rack (1.6.4) lib/rack/content_length.rb:15:in `call'
+  rack (1.6.4) lib/rack/handler/webrick.rb:88:in `service'
+  /Users/roger3antonio/.rbenv/versions/2.2.2/lib/ruby/2.2.0/webrick/httpserver.rb:138:in `service'
+  /Users/roger3antonio/.rbenv/versions/2.2.2/lib/ruby/2.2.0/webrick/httpserver.rb:94:in `run'
+  /Users/roger3antonio/.rbenv/versions/2.2.2/lib/ruby/2.2.0/webrick/server.rb:294:in `block in start_thread'
+
+
+  Rendered /Users/roger3antonio/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.8ms)
+  Rendered /Users/roger3antonio/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/routes/_route.html.erb (2.9ms)
+  Rendered /Users/roger3antonio/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/routes/_table.html.erb (1.9ms)
+  Rendered /Users/roger3antonio/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.9ms)
+  Rendered /Users/roger3antonio/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (158.8ms)
+  Rendered /Users/roger3antonio/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.5ms)
+  Rendered /Users/roger3antonio/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (1.2ms)
+  Rendered /Users/roger3antonio/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.6ms)
+  Rendered /Users/roger3antonio/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.7ms)
+  Rendered /Users/roger3antonio/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (101.8ms)
+  Rendered /Users/roger3antonio/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.4ms)
+  Rendered /Users/roger3antonio/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.7ms)
+  Rendered /Users/roger3antonio/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (217.2ms)
+
+
+Started GET "/assets/images/quipper.jpg" for ::1 at 2016-07-29 20:19:47 -0500
+
+ActionController::RoutingError (No route matches [GET] "/assets/images/quipper.jpg"):
+  actionpack (4.2.6) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  web-console (2.3.0) lib/web_console/middleware.rb:28:in `block in call'
+  web-console (2.3.0) lib/web_console/middleware.rb:18:in `catch'
+  web-console (2.3.0) lib/web_console/middleware.rb:18:in `call'
+  actionpack (4.2.6) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.6) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.6) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.6) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.6) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.6) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.6) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.2.6) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.4) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.4) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.6) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.6) lib/action_dispatch/middleware/static.rb:120:in `call'
+  rack (1.6.4) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.6) lib/rails/engine.rb:518:in `call'
+  railties (4.2.6) lib/rails/application.rb:165:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  rack (1.6.4) lib/rack/content_length.rb:15:in `call'
+  rack (1.6.4) lib/rack/handler/webrick.rb:88:in `service'
+  /Users/roger3antonio/.rbenv/versions/2.2.2/lib/ruby/2.2.0/webrick/httpserver.rb:138:in `service'
+  /Users/roger3antonio/.rbenv/versions/2.2.2/lib/ruby/2.2.0/webrick/httpserver.rb:94:in `run'
+  /Users/roger3antonio/.rbenv/versions/2.2.2/lib/ruby/2.2.0/webrick/server.rb:294:in `block in start_thread'
+
+
+  Rendered /Users/roger3antonio/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.8ms)
+  Rendered /Users/roger3antonio/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/routes/_route.html.erb (2.0ms)
+  Rendered /Users/roger3antonio/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/routes/_table.html.erb (1.8ms)
+  Rendered /Users/roger3antonio/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.4ms)
+  Rendered /Users/roger3antonio/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (154.1ms)
+  Rendered /Users/roger3antonio/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.6ms)
+  Rendered /Users/roger3antonio/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.7ms)
+  Rendered /Users/roger3antonio/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/roger3antonio/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.6ms)
+  Rendered /Users/roger3antonio/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (103.8ms)
+  Rendered /Users/roger3antonio/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.7ms)
+  Rendered /Users/roger3antonio/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (3.7ms)
+  Rendered /Users/roger3antonio/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (240.7ms)
+
+
+Started GET "/" for ::1 at 2016-07-29 20:20:46 -0500
+Processing by WelcomeController#index as HTML
+  Rendered welcome/index.html.haml within layouts/application (4.3ms)
+Completed 200 OK in 574ms (Views: 573.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/images/assets/quipper.jpg" for ::1 at 2016-07-29 20:20:47 -0500
+
+ActionController::RoutingError (No route matches [GET] "/images/assets/quipper.jpg"):
+  actionpack (4.2.6) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  web-console (2.3.0) lib/web_console/middleware.rb:28:in `block in call'
+  web-console (2.3.0) lib/web_console/middleware.rb:18:in `catch'
+  web-console (2.3.0) lib/web_console/middleware.rb:18:in `call'
+  actionpack (4.2.6) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.6) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.6) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.6) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.6) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.6) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.6) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.2.6) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.4) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.4) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.6) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.6) lib/action_dispatch/middleware/static.rb:120:in `call'
+  rack (1.6.4) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.6) lib/rails/engine.rb:518:in `call'
+  railties (4.2.6) lib/rails/application.rb:165:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  rack (1.6.4) lib/rack/content_length.rb:15:in `call'
+  rack (1.6.4) lib/rack/handler/webrick.rb:88:in `service'
+  /Users/roger3antonio/.rbenv/versions/2.2.2/lib/ruby/2.2.0/webrick/httpserver.rb:138:in `service'
+  /Users/roger3antonio/.rbenv/versions/2.2.2/lib/ruby/2.2.0/webrick/httpserver.rb:94:in `run'
+  /Users/roger3antonio/.rbenv/versions/2.2.2/lib/ruby/2.2.0/webrick/server.rb:294:in `block in start_thread'
+
+
+  Rendered /Users/roger3antonio/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (3.3ms)
+  Rendered /Users/roger3antonio/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/routes/_route.html.erb (3.8ms)
+  Rendered /Users/roger3antonio/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/routes/_table.html.erb (1.8ms)
+  Rendered /Users/roger3antonio/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.7ms)
+  Rendered /Users/roger3antonio/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (190.0ms)
+  Rendered /Users/roger3antonio/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.5ms)
+  Rendered /Users/roger3antonio/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/roger3antonio/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.5ms)
+  Rendered /Users/roger3antonio/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/roger3antonio/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (124.7ms)
+  Rendered /Users/roger3antonio/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (1.3ms)
+  Rendered /Users/roger3antonio/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.5ms)
+  Rendered /Users/roger3antonio/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (293.6ms)
+
+
+Started GET "/" for ::1 at 2016-07-29 20:21:00 -0500
+Processing by WelcomeController#index as HTML
+  Rendered welcome/index.html.haml within layouts/application (3.6ms)
+Completed 200 OK in 86ms (Views: 85.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/images/images/quipper.jpg" for ::1 at 2016-07-29 20:21:00 -0500
+
+ActionController::RoutingError (No route matches [GET] "/images/images/quipper.jpg"):
+  actionpack (4.2.6) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  web-console (2.3.0) lib/web_console/middleware.rb:28:in `block in call'
+  web-console (2.3.0) lib/web_console/middleware.rb:18:in `catch'
+  web-console (2.3.0) lib/web_console/middleware.rb:18:in `call'
+  actionpack (4.2.6) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.6) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.6) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.6) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.6) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.6) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.6) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.2.6) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.4) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.4) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.6) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.6) lib/action_dispatch/middleware/static.rb:120:in `call'
+  rack (1.6.4) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.6) lib/rails/engine.rb:518:in `call'
+  railties (4.2.6) lib/rails/application.rb:165:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  rack (1.6.4) lib/rack/content_length.rb:15:in `call'
+  rack (1.6.4) lib/rack/handler/webrick.rb:88:in `service'
+  /Users/roger3antonio/.rbenv/versions/2.2.2/lib/ruby/2.2.0/webrick/httpserver.rb:138:in `service'
+  /Users/roger3antonio/.rbenv/versions/2.2.2/lib/ruby/2.2.0/webrick/httpserver.rb:94:in `run'
+  /Users/roger3antonio/.rbenv/versions/2.2.2/lib/ruby/2.2.0/webrick/server.rb:294:in `block in start_thread'
+
+
+  Rendered /Users/roger3antonio/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.6ms)
+  Rendered /Users/roger3antonio/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/routes/_route.html.erb (3.8ms)
+  Rendered /Users/roger3antonio/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/routes/_table.html.erb (1.9ms)
+  Rendered /Users/roger3antonio/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (2.2ms)
+  Rendered /Users/roger3antonio/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (199.6ms)
+  Rendered /Users/roger3antonio/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.8ms)
+  Rendered /Users/roger3antonio/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.6ms)
+  Rendered /Users/roger3antonio/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.5ms)
+  Rendered /Users/roger3antonio/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.6ms)
+  Rendered /Users/roger3antonio/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (126.2ms)
+  Rendered /Users/roger3antonio/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.7ms)
+  Rendered /Users/roger3antonio/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.6ms)
+  Rendered /Users/roger3antonio/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (315.2ms)
+
+
+Started GET "/" for ::1 at 2016-07-29 20:21:10 -0500
+Processing by WelcomeController#index as HTML
+  Rendered welcome/index.html.haml within layouts/application (2.6ms)
+Completed 200 OK in 81ms (Views: 80.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/quipper.jpg" for ::1 at 2016-07-29 20:21:10 -0500
+
+ActionController::RoutingError (No route matches [GET] "/quipper.jpg"):
+  actionpack (4.2.6) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  web-console (2.3.0) lib/web_console/middleware.rb:28:in `block in call'
+  web-console (2.3.0) lib/web_console/middleware.rb:18:in `catch'
+  web-console (2.3.0) lib/web_console/middleware.rb:18:in `call'
+  actionpack (4.2.6) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.6) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.6) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.6) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.6) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.6) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.6) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.2.6) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.4) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.4) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.6) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.6) lib/action_dispatch/middleware/static.rb:120:in `call'
+  rack (1.6.4) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.6) lib/rails/engine.rb:518:in `call'
+  railties (4.2.6) lib/rails/application.rb:165:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  rack (1.6.4) lib/rack/content_length.rb:15:in `call'
+  rack (1.6.4) lib/rack/handler/webrick.rb:88:in `service'
+  /Users/roger3antonio/.rbenv/versions/2.2.2/lib/ruby/2.2.0/webrick/httpserver.rb:138:in `service'
+  /Users/roger3antonio/.rbenv/versions/2.2.2/lib/ruby/2.2.0/webrick/httpserver.rb:94:in `run'
+  /Users/roger3antonio/.rbenv/versions/2.2.2/lib/ruby/2.2.0/webrick/server.rb:294:in `block in start_thread'
+
+
+  Rendered /Users/roger3antonio/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.9ms)
+  Rendered /Users/roger3antonio/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/routes/_route.html.erb (2.8ms)
+  Rendered /Users/roger3antonio/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/routes/_table.html.erb (1.6ms)
+  Rendered /Users/roger3antonio/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (2.7ms)
+  Rendered /Users/roger3antonio/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (194.3ms)
+  Rendered /Users/roger3antonio/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.5ms)
+  Rendered /Users/roger3antonio/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/roger3antonio/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.6ms)
+  Rendered /Users/roger3antonio/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.8ms)
+  Rendered /Users/roger3antonio/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (141.2ms)
+  Rendered /Users/roger3antonio/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.5ms)
+  Rendered /Users/roger3antonio/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.7ms)
+  Rendered /Users/roger3antonio/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (317.7ms)
+
+
+Started GET "/" for ::1 at 2016-07-29 20:21:15 -0500
+Processing by WelcomeController#index as HTML
+  Rendered welcome/index.html.haml within layouts/application (1654.7ms)
+Completed 200 OK in 1748ms (Views: 1747.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/quipper-97832fd3886377bcff4ba04f68d9f635a88a906ae4c538f6d26dfa0860acd33c.jpg" for ::1 at 2016-07-29 20:21:17 -0500
+
+
+Started GET "/" for ::1 at 2016-07-29 20:21:42 -0500
+Processing by WelcomeController#index as HTML
+  Rendered welcome/index.html.haml within layouts/application (825.4ms)
+Completed 200 OK in 1095ms (Views: 1094.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/quipper-79ceb503d5ff74e962a9e33453bd0cf060027f4dc56c67c8c28a1c520e487ffd.png" for ::1 at 2016-07-29 20:21:43 -0500
+
+
+Started GET "/" for ::1 at 2016-07-29 20:22:11 -0500
+Processing by WelcomeController#index as HTML
+  Rendered welcome/index.html.haml within layouts/application (6.1ms)
+Completed 200 OK in 137ms (Views: 136.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2016-07-29 20:22:28 -0500
+Processing by WelcomeController#index as HTML
+  Rendered welcome/index.html.haml within layouts/application (7.0ms)
+Completed 200 OK in 155ms (Views: 154.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2016-07-29 20:22:42 -0500
+Processing by WelcomeController#index as HTML
+  Rendered welcome/index.html.haml within layouts/application (19.9ms)
+Completed 200 OK in 226ms (Views: 225.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2016-07-29 20:22:59 -0500
+Processing by WelcomeController#index as HTML
+  Rendered welcome/index.html.haml within layouts/application (3.6ms)
+Completed 200 OK in 92ms (Views: 91.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/question_answers" for ::1 at 2016-07-29 20:23:08 -0500
+Processing by QuestionAnswersController#index as HTML
+  [1m[35mQuestionAnswer Load (0.4ms)[0m  SELECT "question_answers".* FROM "question_answers"
+  Rendered question_answers/index.html.haml within layouts/application (4.9ms)
+Completed 200 OK in 160ms (Views: 158.2ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/" for ::1 at 2016-07-29 20:23:10 -0500
+Processing by WelcomeController#index as HTML
+  Rendered welcome/index.html.haml within layouts/application (2.6ms)
+Completed 200 OK in 110ms (Views: 109.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/questionnaires" for ::1 at 2016-07-29 20:23:12 -0500
+Processing by QuestionnairesController#index as HTML
+  [1m[36mQuestionnaire Load (0.2ms)[0m  [1mSELECT "questionnaires".* FROM "questionnaires"[0m
+  Rendered questionnaires/index.html.haml within layouts/application (1.5ms)
+Completed 200 OK in 121ms (Views: 119.8ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/" for ::1 at 2016-07-29 20:23:13 -0500
+Processing by WelcomeController#index as HTML
+  Rendered welcome/index.html.haml within layouts/application (2.9ms)
+Completed 200 OK in 117ms (Views: 116.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2016-07-29 20:27:13 -0500
+  [1m[36mActiveRecord::SchemaMigration Load (12.5ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by WelcomeController#index as HTML
+  Rendered welcome/index.html.haml within layouts/application (3291.5ms)
+Completed 200 OK in 3722ms (Views: 3700.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/questionnaires" for ::1 at 2016-07-29 20:27:19 -0500
+Processing by QuestionnairesController#index as HTML
+  [1m[35mQuestionnaire Load (20.0ms)[0m  SELECT "questionnaires".* FROM "questionnaires"
+  Rendered questionnaires/index.html.haml within layouts/application (32.1ms)
+Completed 200 OK in 205ms (Views: 156.9ms | ActiveRecord: 20.6ms)
+
+
+Started GET "/" for ::1 at 2016-07-29 20:27:26 -0500
+Processing by WelcomeController#index as HTML
+  Rendered welcome/index.html.haml within layouts/application (3.0ms)
+Completed 200 OK in 107ms (Views: 106.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/question_answers" for ::1 at 2016-07-29 20:27:28 -0500
+Processing by QuestionAnswersController#index as HTML
+  [1m[36mQuestionAnswer Load (17.9ms)[0m  [1mSELECT "question_answers".* FROM "question_answers"[0m
+  Rendered question_answers/index.html.haml within layouts/application (30.3ms)
+Completed 200 OK in 143ms (Views: 121.2ms | ActiveRecord: 18.4ms)
+
+
+Started GET "/question_answers/new" for ::1 at 2016-07-29 20:27:30 -0500
+Processing by QuestionAnswersController#new as HTML
+  Rendered question_answers/_form.html.haml (252.0ms)
+  Rendered question_answers/new.html.haml within layouts/application (298.5ms)
+Completed 200 OK in 423ms (Views: 421.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/ckeditor/config.js?t=G6DE" for ::1 at 2016-07-29 20:27:30 -0500
+
+
+Started GET "/assets/ckeditor/skins/moono/editor.css?t=G6DE" for ::1 at 2016-07-29 20:27:30 -0500
+
+
+Started GET "/assets/ckeditor/lang/es.js?t=G6DE" for ::1 at 2016-07-29 20:27:31 -0500
+
+
+Started GET "/assets/ckeditor/styles.js?t=G6DE" for ::1 at 2016-07-29 20:27:31 -0500
+
+
+Started GET "/assets/ckeditor/skins/moono/icons.png?t=b47abaf" for ::1 at 2016-07-29 20:27:31 -0500
+
+
+Started GET "/assets/ckeditor/contents.css?t=G6DE" for ::1 at 2016-07-29 20:27:31 -0500
+
+
+Started GET "/assets/ckeditor/skins/moono/editor.css?t=G6DE" for ::1 at 2016-07-29 20:27:51 -0500
+
+
+Started GET "/assets/ckeditor/contents.css?t=G6DE" for ::1 at 2016-07-29 20:27:51 -0500
+
+
+Started POST "/question_answers" for ::1 at 2016-07-29 20:28:02 -0500
+Processing by QuestionAnswersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"Ur9PbBl4WNpRIOmTtk37iMnjIIfPkAP6s9LR//2jyHaq28brj1Fuss+mZ+w4dqePmwBgHd2HkcHGu9/B14uhYw==", "question_answer"=>{"question"=>"<h1><span style=\"font-family:Comic Sans MS,cursive;\">What is a eraser?</span></h1>\r\n", "answer"=>"nothing"}, "commit"=>"Save"}
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (13.3ms)[0m  [1mINSERT INTO "question_answers" ("question", "answer", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["question", "<h1><span style=\"font-family:Comic Sans MS,cursive;\">What is a eraser?</span></h1>\r\n"], ["answer", "nothing"], ["created_at", "2016-07-30 01:28:02.683314"], ["updated_at", "2016-07-30 01:28:02.683314"]]
+  [1m[35m (13.4ms)[0m  commit transaction
+Redirected to http://localhost:3000/question_answers/4
+Completed 302 Found in 39ms (ActiveRecord: 26.8ms)
+
+
+Started GET "/question_answers/4" for ::1 at 2016-07-29 20:28:02 -0500
+Processing by QuestionAnswersController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mQuestionAnswer Load (0.3ms)[0m  [1mSELECT  "question_answers".* FROM "question_answers" WHERE "question_answers"."id" = ? LIMIT 1[0m  [["id", 4]]
+  Rendered question_answers/show.html.haml within layouts/application (3.1ms)
+Completed 200 OK in 116ms (Views: 86.7ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/question_answers" for ::1 at 2016-07-29 20:28:05 -0500
+Processing by QuestionAnswersController#index as HTML
+  [1m[35mQuestionAnswer Load (0.2ms)[0m  SELECT "question_answers".* FROM "question_answers"
+  Rendered question_answers/index.html.haml within layouts/application (3.2ms)
+Completed 200 OK in 119ms (Views: 118.0ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/question_answers/new" for ::1 at 2016-07-29 20:29:15 -0500
+Processing by QuestionAnswersController#new as HTML
+  Rendered question_answers/_form.html.haml (3.1ms)
+  Rendered question_answers/new.html.haml within layouts/application (14.6ms)
+Completed 200 OK in 814ms (Views: 812.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/ckeditor/config.js?t=G6DE" for ::1 at 2016-07-29 20:29:16 -0500
+
+
+Started GET "/assets/ckeditor/skins/moono/editor.css?t=G6DE" for ::1 at 2016-07-29 20:29:16 -0500
+
+
+Started GET "/assets/ckeditor/lang/es.js?t=G6DE" for ::1 at 2016-07-29 20:29:16 -0500
+
+
+Started GET "/assets/ckeditor/styles.js?t=G6DE" for ::1 at 2016-07-29 20:29:16 -0500
+
+
+Started GET "/assets/ckeditor/skins/moono/icons.png?t=b47abaf" for ::1 at 2016-07-29 20:29:17 -0500
+
+
+Started GET "/assets/ckeditor/contents.css?t=G6DE" for ::1 at 2016-07-29 20:29:17 -0500
+
+
+Started GET "/assets/ckeditor/skins/moono/editor.css?t=G6DE" for ::1 at 2016-07-29 20:29:43 -0500
+
+
+Started POST "/question_answers" for ::1 at 2016-07-29 20:29:50 -0500
+Processing by QuestionAnswersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"9NCQ0H4FeOvd+vXJ3Xdampz7nZn+H2xbXcqQ7n53HeYMtBlX6CxOg0N8e7ZTTAadzhjdA+wI/mAoo57QVF908w==", "question_answer"=>{"question"=>"<p>hola que tal <span style=\"color:#00ffff;\">hihihi</span></p>\r\n", "answer"=>""}, "commit"=>"Save"}
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (31.6ms)[0m  INSERT INTO "question_answers" ("question", "answer", "created_at", "updated_at") VALUES (?, ?, ?, ?)  [["question", "<p>hola que tal <span style=\"color:#00ffff;\">hihihi</span></p>\r\n"], ["answer", ""], ["created_at", "2016-07-30 01:29:50.050295"], ["updated_at", "2016-07-30 01:29:50.050295"]]
+  [1m[36m (1.7ms)[0m  [1mcommit transaction[0m
+Redirected to http://localhost:3000/question_answers/5
+Completed 302 Found in 36ms (ActiveRecord: 33.4ms)
+
+
+Started GET "/question_answers/5" for ::1 at 2016-07-29 20:29:50 -0500
+Processing by QuestionAnswersController#show as HTML
+  Parameters: {"id"=>"5"}
+  [1m[35mQuestionAnswer Load (0.2ms)[0m  SELECT  "question_answers".* FROM "question_answers" WHERE "question_answers"."id" = ? LIMIT 1  [["id", 5]]
+  Rendered question_answers/show.html.haml within layouts/application (0.7ms)
+Completed 200 OK in 123ms (Views: 121.4ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/question_answers" for ::1 at 2016-07-29 20:29:52 -0500
+Processing by QuestionAnswersController#index as HTML
+  [1m[36mQuestionAnswer Load (0.2ms)[0m  [1mSELECT "question_answers".* FROM "question_answers"[0m
+  Rendered question_answers/index.html.haml within layouts/application (3.4ms)
+Completed 200 OK in 119ms (Views: 118.0ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/" for ::1 at 2016-07-29 20:33:13 -0500
+Processing by WelcomeController#index as HTML
+  Rendered welcome/index.html.haml within layouts/application (60.7ms)
+Completed 200 OK in 661ms (Views: 660.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/questionnaires" for ::1 at 2016-07-29 20:33:16 -0500
+Processing by QuestionnairesController#index as HTML
+  [1m[35mQuestionnaire Load (0.5ms)[0m  SELECT "questionnaires".* FROM "questionnaires"
+  Rendered questionnaires/index.html.haml within layouts/application (6.3ms)
+Completed 200 OK in 149ms (Views: 121.8ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/questionnaires/new" for ::1 at 2016-07-29 20:33:17 -0500
+Processing by QuestionnairesController#new as HTML
+  [1m[36mQuestionAnswer Load (0.3ms)[0m  [1mSELECT "question_answers".* FROM "question_answers"[0m
+  Rendered questionnaires/_form.html.haml (14.2ms)
+  Rendered questionnaires/new.html.haml within layouts/application (43.7ms)
+Completed 200 OK in 152ms (Views: 130.7ms | ActiveRecord: 0.5ms)
+
+
+Started POST "/questionnaires" for ::1 at 2016-07-29 20:33:34 -0500
+Processing by QuestionnairesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"ama46AjN8IY9/sRyQQn9WQr0HMJGPPnzVyiEvY/dlrCSAjFvnuTG7qN4Sg3PMqFeWBdcWFQra8giQYqDpfX/pQ==", "input_1"=>"32", "input_2"=>"5", "input_3"=>"7:00", "input_4"=>"no se", "input_5"=>"", "commit"=>"Save"}
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.5ms)[0m  [1mINSERT INTO "questionnaires" ("created_at", "updated_at") VALUES (?, ?)[0m  [["created_at", "2016-07-30 01:33:34.598233"], ["updated_at", "2016-07-30 01:33:34.598233"]]
+  [1m[35m (1.3ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  UPDATE "questionnaires" SET "title" = ?, "updated_at" = ? WHERE "questionnaires"."id" = ?  [["title", "Test 3"], ["updated_at", "2016-07-30 01:33:34.601808"], ["id", 3]]
+  [1m[36m (1.0ms)[0m  [1mcommit transaction[0m
+  [1m[35mQuestionAnswer Load (0.2ms)[0m  SELECT  "question_answers".* FROM "question_answers" WHERE "question_answers"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (29.1ms)[0m  INSERT INTO "questionnairedetails" ("answerUser", "idquestion", "eval", "questionnaire_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)  [["answerUser", "32"], ["idquestion", 1], ["eval", "<span style=\"color:green;\">CORRECT</span>"], ["questionnaire_id", 3], ["created_at", "2016-07-30 01:33:34.639950"], ["updated_at", "2016-07-30 01:33:34.639950"]]
+  [1m[36m (17.0ms)[0m  [1mcommit transaction[0m
+  [1m[35mQuestionAnswer Load (0.1ms)[0m  SELECT  "question_answers".* FROM "question_answers" WHERE "question_answers"."id" = ? LIMIT 1  [["id", 2]]
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "questionnairedetails" ("answerUser", "idquestion", "eval", "questionnaire_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)  [["answerUser", "5"], ["idquestion", 2], ["eval", "<span style=\"color:green;\">CORRECT</span>"], ["questionnaire_id", 3], ["created_at", "2016-07-30 01:33:34.689050"], ["updated_at", "2016-07-30 01:33:34.689050"]]
+  [1m[36m (2.0ms)[0m  [1mcommit transaction[0m
+  [1m[35mQuestionAnswer Load (0.1ms)[0m  SELECT  "question_answers".* FROM "question_answers" WHERE "question_answers"."id" = ? LIMIT 1  [["id", 3]]
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "questionnairedetails" ("answerUser", "idquestion", "eval", "questionnaire_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)  [["answerUser", "7:00"], ["idquestion", 3], ["eval", "<span style=\"color:green;\">CORRECT</span>"], ["questionnaire_id", 3], ["created_at", "2016-07-30 01:33:34.693954"], ["updated_at", "2016-07-30 01:33:34.693954"]]
+  [1m[36m (1.8ms)[0m  [1mcommit transaction[0m
+  [1m[35mQuestionAnswer Load (0.1ms)[0m  SELECT  "question_answers".* FROM "question_answers" WHERE "question_answers"."id" = ? LIMIT 1  [["id", 4]]
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "questionnairedetails" ("answerUser", "idquestion", "eval", "questionnaire_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)  [["answerUser", "no se"], ["idquestion", 4], ["eval", "<span style=\"color:red;\">INCORRECT</span>"], ["questionnaire_id", 3], ["created_at", "2016-07-30 01:33:34.698016"], ["updated_at", "2016-07-30 01:33:34.698016"]]
+  [1m[36m (1.3ms)[0m  [1mcommit transaction[0m
+  [1m[35mQuestionAnswer Load (0.2ms)[0m  SELECT  "question_answers".* FROM "question_answers" WHERE "question_answers"."id" = ? LIMIT 1  [["id", 5]]
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "questionnairedetails" ("answerUser", "idquestion", "eval", "questionnaire_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)  [["answerUser", ""], ["idquestion", 5], ["eval", "<span style=\"color:green;\">CORRECT</span>"], ["questionnaire_id", 3], ["created_at", "2016-07-30 01:33:34.702622"], ["updated_at", "2016-07-30 01:33:34.702622"]]
+  [1m[36m (1.3ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mcommit transaction[0m
+Redirected to http://localhost:3000/questionnaires/3
+Completed 302 Found in 115ms (ActiveRecord: 58.8ms)
+
+
+Started GET "/questionnaires/3" for ::1 at 2016-07-29 20:33:34 -0500
+Processing by QuestionnairesController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[35mQuestionnaire Load (0.3ms)[0m  SELECT  "questionnaires".* FROM "questionnaires" WHERE "questionnaires"."id" = ? LIMIT 1  [["id", 3]]
+  [1m[36mQuestionnairedetail Load (0.2ms)[0m  [1mSELECT "questionnairedetails".* FROM "questionnairedetails" WHERE "questionnairedetails"."questionnaire_id" = ?[0m  [["questionnaire_id", 3]]
+  [1m[35mQuestionAnswer Load (0.1ms)[0m  SELECT "question_answers".* FROM "question_answers" WHERE "question_answers"."id" = ?  [["id", 1]]
+  [1m[36mQuestionAnswer Load (0.1ms)[0m  [1mSELECT "question_answers".* FROM "question_answers" WHERE "question_answers"."id" = ?[0m  [["id", 2]]
+  [1m[35mQuestionAnswer Load (0.1ms)[0m  SELECT "question_answers".* FROM "question_answers" WHERE "question_answers"."id" = ?  [["id", 3]]
+  [1m[36mQuestionAnswer Load (0.1ms)[0m  [1mSELECT "question_answers".* FROM "question_answers" WHERE "question_answers"."id" = ?[0m  [["id", 4]]
+  [1m[35mQuestionAnswer Load (0.2ms)[0m  SELECT "question_answers".* FROM "question_answers" WHERE "question_answers"."id" = ?  [["id", 5]]
+  Rendered questionnaires/show.html.haml within layouts/application (8.5ms)
+Completed 200 OK in 289ms (Views: 286.0ms | ActiveRecord: 1.2ms)

@@ -1,8 +1,12 @@
 Rails.application.routes.draw do
+  resources :questionnairedetails
   #get 'welcome/index'
 
   resources :questionnaires
   resources :question_answers
+
+  match '/questionnaires/preview', :to => 'questionnaires#preview', via: [:get, :post]
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

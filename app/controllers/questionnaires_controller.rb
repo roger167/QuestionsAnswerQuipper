@@ -10,7 +10,8 @@ class QuestionnairesController < ApplicationController
   # GET /questionnaires/1
   # GET /questionnaires/1.json
   def show
-    @questionnaire = Questionnaire.where(questionnairesnumber: params[:id])
+    @questionnaire = Questionnaire.find(params[:id])
+    @questionnaireDetail = Questionnairedetail.where(questionnaire_id: @questionnaire.id)
   end
 
   # GET /questionnaires/new
@@ -26,43 +27,38 @@ class QuestionnairesController < ApplicationController
   # POST /questionnaires
   # POST /questionnaires.json
   def create
-    arrayAnswer = Array.new
-    params.each do |param,answerUser|
-      if param.index("input")
-        arr=param.split('_')
-        questionid=arr[1]
-        arrayAnswer.push(questionid.to_s+'_'+answerUser+'_'+eval(questionid,answerUser))
-      end
-    end
 
-    if arrayAnswer.length.to_i > 0
-      @questionnaire = Questionnaire.new
+    @questionnaire = Questionnaire.new
+    if @questionnaire.save
+      @questionnaire.title="Test "+@questionnaire.id.to_s
       @questionnaire.save
-      @idquestionnaire=@questionnaire.id
-      arrayAnswer.each do |val|
-        arr= val.split('_')
-        @questionnaire.idquestion=arr[0].to_i
-        @questionnaire.answerUser=arr[1]
-        @questionnaire.eval=arr[2]
-        @questionnaire.questionnairesnumber=@idquestionnaire
-        @questionnaire.save
-        @questionnaire = Questionnaire.new
+      params.each do |param,answerUser|
+        if param.index("input")
+          arr=param.split('_')
+          if arr.length.to_i > 0
+            questionid=arr[1]
+            @questionnaireDetail= Questionnairedetail.new
+            @questionnaireDetail.answerUser=answerUser
+            @questionnaireDetail.idquestion=questionid.to_i
+            @questionnaireDetail.eval=eval(questionid,answerUser)
+            @questionnaireDetail.questionnaire_id=@questionnaire.id
+            @questionnaireDetail.save
+          end
+        end
       end
     end
 
-    #respond_to do |format|
-      @questionnaire = Questionnaire.where(questionnairesnumber: @idquestionnaire.to_i)
-      @question_answers = QuestionAnswer.all
-      #if @questionnaire.save
-        #format.html { redirect_to @questionnaire, notice: 'Questionnaire was successfully created.' }
-        #format.json { render :show, status: :created, location: @questionnaire }
-      #else
-       # format.html { render :new }
-        #format.json { render json: @questionnaire.errors, status: :unprocessable_entity }
-      #end
-    #end
-    redirect_to :action => "index"
+    respond_to do |format|
+      if @questionnaire.save
+        format.html { redirect_to @questionnaire, notice: 'Questionnaire was successfully created.' }
+        format.json { render :show, status: :created, location: @questionnaire }
+      else
+        format.html { render :new }
+        format.json { render json: @questionnaire.errors, status: :unprocessable_entity }
+      end
+    end
   end
+
 
   # PATCH/PUT /questionnaires/1
   # PATCH/PUT /questionnaires/1.json
@@ -91,9 +87,9 @@ class QuestionnairesController < ApplicationController
   def eval(questionid,answerUser)
     @question_answer = QuestionAnswer.find(questionid)
     if @question_answer.answer.index(answerUser)
-      return 'CORRECT'
+      return '<span style="color:green;">CORRECT</span>'
     else
-      return 'INCORRECT'
+      return '<span style="color:red;">INCORRECT</span>'
     end
   end
 
